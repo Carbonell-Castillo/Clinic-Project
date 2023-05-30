@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title>Title of the document</title>
+            <style>
+                *{
+                    font-family: 'Roboto', sans-serif;
+                }
+            
+                table.border {
+                    border-collapse: collapse;
+                }
+        
+                    table.border th {
+                        padding: 5px;
+                        border: 1px solid black;
+                    }
+        
+                    table.border td {
+                        padding: 5px;
+                        border: 1px solid black;
+                    }
+            </style>
+        </head>
+        <body>
+            <table style="width:100%">
+                <tr>
+                    <td style="width:20%"></td>
+                    <td style="width:60%" align="center" valign="top">
+                        <table>
+                            <tr><td align="center"><h4 style="margin:0px;">Dr. Daniel Garcia Bernando</h4></td></tr>
+                            <tr><td align="center" style="font-style: italic;">4ta calle 23-61 zona 3 </td></tr>
+                            <tr><td align="center" style="font-style: italic;">Centro Médico Hospitalario LA PAZ Xela, Oficina 309 Nivel 3 </td></tr>
+                            <tr><td align="center" style="font-style: italic;">Telefono: 4556-2015</td></tr>
+                        </table>
+                    </td>
+                    <td style="width:20%">
+                        <table class="border" style="width:100%">
+                            <tr><td align="center" style="background-color:#0B8EE6">FACTURA</td></tr>
+                            <tr><td align="center">@NumeroFactura</td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            
+            
+                
+            <div style="float: right; margin: 0px; margin-left: 5%;">
+                <table>
+                    <tr><td><h2 style="margin:0px; color: #e13419;">Datos del Cliente</h2></td></tr>
+                    <tr><td style="font-style: italic;">@nombre</td></tr>
+                    <tr><td style="font-style: italic;">@nit</td></tr>
+                    <tr><td style="font-style: italic;">@tipo</td></tr>
+                    <tr><td style="font-style: italic;"></td></tr>
+                </table>
+            </div>  
+
+            <table style="width: 100%; position: relative;">
+            <tr>
+                <td>
+                    <table class="border" style="width: 100%;">
+                        <thead>
+                            <tr style="background-color:#0B8EE6">
+                                <th>Nombre</th>
+                                <th>Cant.</th>
+                                <th>Descripcion</th>
+                                <th>P. Unitario</th>
+                                <th>Importe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--<tr>
+                                <td>1</td>
+                                <td>sdafsda</td>
+                                <td>2.4</td>
+                                <td>2.4</td>
+                            </tr>-->
+                            @FILAS
+                            <tr>
+                                <td style="border: 0px !important"></td>
+                                <td style="border: 0px !important"></td>
+                                <td style="border: 0px !important"></td>
+                                <td align="right">Total:</td>
+                                <td>@TOTAL</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>  
+                
+            
+        </body>
+    </html>
