@@ -74,3 +74,4 @@ C:\Users\bruce\OneDrive\Escritorio\Proyecto Daniel\Proyecto Version 2 Daniel\Cli
 C:\Users\bruce\OneDrive\Escritorio\Proyecto Daniel\Proyecto Version 2 Daniel\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.frmFactura.resources
 C:\Users\bruce\OneDrive\Escritorio\Proyecto Daniel\Proyecto Version 2 Daniel\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.frmEditInventory.resources
 C:\Users\bruce\OneDrive\Escritorio\Proyecto Daniel\Proyecto Version 2 Daniel\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.frmDeleteInventory.resources
+C:\Users\bruce\OneDrive\Escritorio\Proyecto Daniel\Proyecto Version 2 Daniel\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.TestOpenPdf.resources

@@ -37,5 +37,8 @@
     <Compile Update="Model.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TestOpenPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
