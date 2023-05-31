@@ -310,5 +310,12 @@ namespace ClinicalApplication
 
             hideSubMenu();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            TestOpenPdf openPdf = new TestOpenPdf();
+
+            openPdf.Show();
+        }
     }
 }

@@ -50,6 +50,7 @@
             btnClose = new FontAwesome.Sharp.IconButton();
             panelChildForm = new Panel();
             pictureBox1 = new PictureBox();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelInventorySubmenu.SuspendLayout();
             panel1.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = SystemColors.Highlight;
+            panelMenu.Controls.Add(iconButton1);
             panelMenu.Controls.Add(btnHumanResources);
             panelMenu.Controls.Add(btnFinances);
             panelMenu.Controls.Add(panelInventorySubmenu);
@@ -447,6 +449,30 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // iconButton1
+            // 
+            iconButton1.Dock = DockStyle.Top;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.ForeColor = SystemColors.ControlLightLight;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Print;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 30;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(0, 502);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(10, 0, 0, 0);
+            iconButton1.Size = new Size(230, 44);
+            iconButton1.TabIndex = 14;
+            iconButton1.Tag = "Recursos Humanos";
+            iconButton1.Text = "Buscar Factura";
+            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
             // FRMDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -496,5 +522,6 @@
         private FontAwesome.Sharp.IconButton btnModifyInventory;
         private FontAwesome.Sharp.IconButton btnInventory;
         private PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
