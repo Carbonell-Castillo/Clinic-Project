@@ -40,6 +40,12 @@ namespace ClinicalApplication
 
                 pdfDoc.Open();
 
+                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logo, System.Drawing.Imaging.ImageFormat.Png);
+                img.ScaleToFit(120, 120);
+                img.Alignment = iTextSharp.text.Image.UNDERLYING;
+                img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top-80);
+                pdfDoc.Add(img);
+
                 using (StringReader sr = new StringReader(htmlContent))
                 {
                     XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
@@ -52,7 +58,8 @@ namespace ClinicalApplication
             }
         }
         private void btnCrearPDF_Click(object sender, EventArgs e)
-        {
+        {           
+
             grdPreviewBill.Rows.Add(txtType.Text, "1", "Consulta", txtConsultPrice.Text, txtConsultPrice.Text);
 
             string paginathtml_texto = Properties.Resources.plantilla.ToString();
