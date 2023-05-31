@@ -32,12 +32,16 @@ namespace ClinicalApplication
         private void customizeDesing()
         {
             panelInventorySubmenu.Visible = false;
+            panelSalesSubmenu.Visible = false;
         }
 
         private void hideSubMenu()
         {
             if (panelInventorySubmenu.Visible == true)
             { panelInventorySubmenu.Visible = false; }
+
+            if (panelSalesSubmenu.Visible == true)
+            { panelSalesSubmenu.Visible = false; }
         }
 
         private void showSubMenu(Panel subMenu)
@@ -306,16 +310,21 @@ namespace ClinicalApplication
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new frmFactura());
-
-            hideSubMenu();
+            showSubMenu(panelSalesSubmenu);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            TestOpenPdf openPdf = new TestOpenPdf();
+            openChildFormInPanel(new TestOpenPdf());
 
-            openPdf.Show();
+            hideSubMenu();
+        }
+
+        private void iconButton2_Click_1(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new frmFactura());
+
+            hideSubMenu();
         }
     }
 }

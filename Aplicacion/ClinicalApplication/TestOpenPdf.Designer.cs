@@ -31,19 +31,21 @@
             customButton1 = new Controls.CustomButton();
             txtIdInvoice = new TextBox();
             label1 = new Label();
+            btnPurcharseBack = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
             // 
             // customButton1
             // 
-            customButton1.BackColor = Color.MediumSlateBlue;
-            customButton1.BackgroundColor = Color.MediumSlateBlue;
+            customButton1.BackColor = Color.DodgerBlue;
+            customButton1.BackgroundColor = Color.DodgerBlue;
             customButton1.BorderColor = Color.PaleVioletRed;
             customButton1.BorderRadius = 0;
             customButton1.BorderSize = 0;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             customButton1.ForeColor = Color.White;
-            customButton1.Location = new Point(58, 214);
+            customButton1.Location = new Point(273, 268);
             customButton1.Name = "customButton1";
             customButton1.Size = new Size(150, 40);
             customButton1.TabIndex = 0;
@@ -54,28 +56,48 @@
             // 
             // txtIdInvoice
             // 
-            txtIdInvoice.Location = new Point(120, 117);
+            txtIdInvoice.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIdInvoice.Location = new Point(386, 220);
             txtIdInvoice.Name = "txtIdInvoice";
-            txtIdInvoice.Size = new Size(100, 23);
+            txtIdInvoice.Size = new Size(100, 29);
             txtIdInvoice.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(97, 117);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(217, 220);
             label1.Name = "label1";
-            label1.Size = new Size(17, 15);
+            label1.Size = new Size(151, 21);
             label1.TabIndex = 2;
-            label1.Text = "Id";
+            label1.Text = "Ingrese el ID del pdf:";
+            // 
+            // btnPurcharseBack
+            // 
+            btnPurcharseBack.BackColor = Color.IndianRed;
+            btnPurcharseBack.FlatAppearance.BorderSize = 0;
+            btnPurcharseBack.FlatStyle = FlatStyle.Flat;
+            btnPurcharseBack.IconChar = FontAwesome.Sharp.IconChar.X;
+            btnPurcharseBack.IconColor = Color.White;
+            btnPurcharseBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPurcharseBack.IconSize = 20;
+            btnPurcharseBack.Location = new Point(620, 35);
+            btnPurcharseBack.Name = "btnPurcharseBack";
+            btnPurcharseBack.Size = new Size(45, 24);
+            btnPurcharseBack.TabIndex = 88;
+            btnPurcharseBack.UseVisualStyleBackColor = false;
+            btnPurcharseBack.Click += btnPurcharseBack_Click;
             // 
             // TestOpenPdf
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(688, 518);
+            Controls.Add(btnPurcharseBack);
             Controls.Add(label1);
             Controls.Add(txtIdInvoice);
             Controls.Add(customButton1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "TestOpenPdf";
             Text = "TestOpenPdf";
             ResumeLayout(false);
@@ -87,5 +109,6 @@
         private Controls.CustomButton customButton1;
         private TextBox txtIdInvoice;
         private Label label1;
+        private FontAwesome.Sharp.IconButton btnPurcharseBack;
     }
 }

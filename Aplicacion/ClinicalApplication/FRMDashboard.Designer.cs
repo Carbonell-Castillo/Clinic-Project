@@ -30,29 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMDashboard));
             panelMenu = new Panel();
-            btnHumanResources = new FontAwesome.Sharp.IconButton();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             btnFinances = new FontAwesome.Sharp.IconButton();
             panelInventorySubmenu = new Panel();
             btnDeleteInventory = new FontAwesome.Sharp.IconButton();
             btnModifyInventory = new FontAwesome.Sharp.IconButton();
             btnConsultInventory = new FontAwesome.Sharp.IconButton();
             btnInventory = new FontAwesome.Sharp.IconButton();
+            panelSalesSubmenu = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             btnSales = new FontAwesome.Sharp.IconButton();
-            btnSignOut = new FontAwesome.Sharp.IconButton();
             btnPurchases = new FontAwesome.Sharp.IconButton();
             btnMainMenu = new FontAwesome.Sharp.IconButton();
             panel1 = new Panel();
             lblTitleDash = new Label();
             btnMenu = new FontAwesome.Sharp.IconButton();
+            btnSignOut = new FontAwesome.Sharp.IconButton();
             panelTitleBar = new Panel();
             btnMinimize = new FontAwesome.Sharp.IconButton();
             btnMaximize = new FontAwesome.Sharp.IconButton();
             btnClose = new FontAwesome.Sharp.IconButton();
             panelChildForm = new Panel();
             pictureBox1 = new PictureBox();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
             panelMenu.SuspendLayout();
             panelInventorySubmenu.SuspendLayout();
+            panelSalesSubmenu.SuspendLayout();
             panel1.SuspendLayout();
             panelTitleBar.SuspendLayout();
             panelChildForm.SuspendLayout();
@@ -63,44 +66,43 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = SystemColors.Highlight;
-            panelMenu.Controls.Add(iconButton1);
-            panelMenu.Controls.Add(btnHumanResources);
+            panelMenu.Controls.Add(iconButton3);
             panelMenu.Controls.Add(btnFinances);
             panelMenu.Controls.Add(panelInventorySubmenu);
             panelMenu.Controls.Add(btnInventory);
+            panelMenu.Controls.Add(panelSalesSubmenu);
             panelMenu.Controls.Add(btnSales);
-            panelMenu.Controls.Add(btnSignOut);
             panelMenu.Controls.Add(btnPurchases);
             panelMenu.Controls.Add(btnMainMenu);
             panelMenu.Controls.Add(panel1);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(230, 581);
+            panelMenu.Size = new Size(230, 604);
             panelMenu.TabIndex = 0;
             // 
-            // btnHumanResources
+            // iconButton3
             // 
-            btnHumanResources.Dock = DockStyle.Top;
-            btnHumanResources.FlatAppearance.BorderSize = 0;
-            btnHumanResources.FlatStyle = FlatStyle.Flat;
-            btnHumanResources.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnHumanResources.ForeColor = SystemColors.ControlLightLight;
-            btnHumanResources.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            btnHumanResources.IconColor = Color.White;
-            btnHumanResources.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnHumanResources.IconSize = 30;
-            btnHumanResources.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHumanResources.Location = new Point(0, 458);
-            btnHumanResources.Name = "btnHumanResources";
-            btnHumanResources.Padding = new Padding(10, 0, 0, 0);
-            btnHumanResources.Size = new Size(230, 44);
-            btnHumanResources.TabIndex = 13;
-            btnHumanResources.Tag = "Recursos Humanos";
-            btnHumanResources.Text = "  Recursos Humanos";
-            btnHumanResources.TextAlign = ContentAlignment.MiddleLeft;
-            btnHumanResources.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnHumanResources.UseVisualStyleBackColor = true;
+            iconButton3.Dock = DockStyle.Top;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton3.ForeColor = SystemColors.ControlLightLight;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            iconButton3.IconColor = Color.White;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 30;
+            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton3.Location = new Point(0, 564);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Padding = new Padding(10, 0, 0, 0);
+            iconButton3.Size = new Size(213, 44);
+            iconButton3.TabIndex = 16;
+            iconButton3.Tag = "Finanzas";
+            iconButton3.Text = "  Derechos Humanos";
+            iconButton3.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton3.UseVisualStyleBackColor = true;
             // 
             // btnFinances
             // 
@@ -114,10 +116,10 @@
             btnFinances.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnFinances.IconSize = 30;
             btnFinances.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFinances.Location = new Point(0, 414);
+            btnFinances.Location = new Point(0, 520);
             btnFinances.Name = "btnFinances";
             btnFinances.Padding = new Padding(10, 0, 0, 0);
-            btnFinances.Size = new Size(230, 44);
+            btnFinances.Size = new Size(213, 44);
             btnFinances.TabIndex = 12;
             btnFinances.Tag = "Finanzas";
             btnFinances.Text = "  Finanzas";
@@ -132,9 +134,9 @@
             panelInventorySubmenu.Controls.Add(btnModifyInventory);
             panelInventorySubmenu.Controls.Add(btnConsultInventory);
             panelInventorySubmenu.Dock = DockStyle.Top;
-            panelInventorySubmenu.Location = new Point(0, 254);
+            panelInventorySubmenu.Location = new Point(0, 360);
             panelInventorySubmenu.Name = "panelInventorySubmenu";
-            panelInventorySubmenu.Size = new Size(230, 160);
+            panelInventorySubmenu.Size = new Size(213, 160);
             panelInventorySubmenu.TabIndex = 11;
             // 
             // btnDeleteInventory
@@ -152,7 +154,7 @@
             btnDeleteInventory.Location = new Point(0, 100);
             btnDeleteInventory.Name = "btnDeleteInventory";
             btnDeleteInventory.Padding = new Padding(10, 0, 0, 0);
-            btnDeleteInventory.Size = new Size(230, 50);
+            btnDeleteInventory.Size = new Size(213, 50);
             btnDeleteInventory.TabIndex = 6;
             btnDeleteInventory.Tag = "Eliminar";
             btnDeleteInventory.Text = "  Eliminar";
@@ -176,7 +178,7 @@
             btnModifyInventory.Location = new Point(0, 50);
             btnModifyInventory.Name = "btnModifyInventory";
             btnModifyInventory.Padding = new Padding(10, 0, 0, 0);
-            btnModifyInventory.Size = new Size(230, 50);
+            btnModifyInventory.Size = new Size(213, 50);
             btnModifyInventory.TabIndex = 5;
             btnModifyInventory.Tag = "Modificar";
             btnModifyInventory.Text = "  Modificar";
@@ -200,7 +202,7 @@
             btnConsultInventory.Location = new Point(0, 0);
             btnConsultInventory.Name = "btnConsultInventory";
             btnConsultInventory.Padding = new Padding(10, 0, 0, 0);
-            btnConsultInventory.Size = new Size(230, 50);
+            btnConsultInventory.Size = new Size(213, 50);
             btnConsultInventory.TabIndex = 4;
             btnConsultInventory.Tag = "Consultar";
             btnConsultInventory.Text = "  Consultar";
@@ -221,10 +223,10 @@
             btnInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnInventory.IconSize = 30;
             btnInventory.ImageAlign = ContentAlignment.MiddleLeft;
-            btnInventory.Location = new Point(0, 210);
+            btnInventory.Location = new Point(0, 316);
             btnInventory.Name = "btnInventory";
             btnInventory.Padding = new Padding(10, 0, 0, 0);
-            btnInventory.Size = new Size(230, 44);
+            btnInventory.Size = new Size(213, 44);
             btnInventory.TabIndex = 10;
             btnInventory.Tag = "Inventario";
             btnInventory.Text = "  Inventario";
@@ -232,6 +234,65 @@
             btnInventory.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInventory.UseVisualStyleBackColor = true;
             btnInventory.Click += btnInventory_Click;
+            // 
+            // panelSalesSubmenu
+            // 
+            panelSalesSubmenu.BackColor = Color.FromArgb(41, 145, 217);
+            panelSalesSubmenu.Controls.Add(iconButton1);
+            panelSalesSubmenu.Controls.Add(iconButton2);
+            panelSalesSubmenu.Dock = DockStyle.Top;
+            panelSalesSubmenu.Location = new Point(0, 210);
+            panelSalesSubmenu.Name = "panelSalesSubmenu";
+            panelSalesSubmenu.Size = new Size(213, 106);
+            panelSalesSubmenu.TabIndex = 15;
+            // 
+            // iconButton1
+            // 
+            iconButton1.Dock = DockStyle.Top;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton1.ForeColor = SystemColors.ControlLightLight;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Print;
+            iconButton1.IconColor = Color.White;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 30;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(0, 44);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Padding = new Padding(10, 0, 0, 0);
+            iconButton1.Size = new Size(213, 44);
+            iconButton1.TabIndex = 14;
+            iconButton1.Tag = "Recursos Humanos";
+            iconButton1.Text = "Buscar Factura";
+            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton1.UseVisualStyleBackColor = true;
+            iconButton1.Click += iconButton1_Click;
+            // 
+            // iconButton2
+            // 
+            iconButton2.Dock = DockStyle.Top;
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton2.ForeColor = SystemColors.ControlLightLight;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
+            iconButton2.IconColor = Color.White;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 30;
+            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton2.Location = new Point(0, 0);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Padding = new Padding(10, 0, 0, 0);
+            iconButton2.Size = new Size(213, 44);
+            iconButton2.TabIndex = 16;
+            iconButton2.Tag = "Recursos Humanos";
+            iconButton2.Text = "Generar Factura";
+            iconButton2.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton2.TextImageRelation = TextImageRelation.ImageBeforeText;
+            iconButton2.UseVisualStyleBackColor = true;
+            iconButton2.Click += iconButton2_Click_1;
             // 
             // btnSales
             // 
@@ -248,7 +309,7 @@
             btnSales.Location = new Point(0, 161);
             btnSales.Name = "btnSales";
             btnSales.Padding = new Padding(10, 0, 0, 0);
-            btnSales.Size = new Size(230, 49);
+            btnSales.Size = new Size(213, 49);
             btnSales.TabIndex = 9;
             btnSales.Tag = "Ventas";
             btnSales.Text = "  Ventas";
@@ -256,29 +317,6 @@
             btnSales.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSales.UseVisualStyleBackColor = true;
             btnSales.Click += btnSales_Click;
-            // 
-            // btnSignOut
-            // 
-            btnSignOut.Dock = DockStyle.Bottom;
-            btnSignOut.FlatAppearance.BorderSize = 0;
-            btnSignOut.FlatStyle = FlatStyle.Flat;
-            btnSignOut.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSignOut.ForeColor = SystemColors.ControlLightLight;
-            btnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            btnSignOut.IconColor = Color.White;
-            btnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnSignOut.IconSize = 30;
-            btnSignOut.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSignOut.Location = new Point(0, 537);
-            btnSignOut.Name = "btnSignOut";
-            btnSignOut.Padding = new Padding(10, 0, 0, 15);
-            btnSignOut.Size = new Size(230, 44);
-            btnSignOut.TabIndex = 6;
-            btnSignOut.Tag = "Cerrar Sesion";
-            btnSignOut.Text = "  Cerrar Sesion";
-            btnSignOut.TextAlign = ContentAlignment.MiddleLeft;
-            btnSignOut.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSignOut.UseVisualStyleBackColor = true;
             // 
             // btnPurchases
             // 
@@ -295,7 +333,7 @@
             btnPurchases.Location = new Point(0, 117);
             btnPurchases.Name = "btnPurchases";
             btnPurchases.Padding = new Padding(10, 0, 0, 0);
-            btnPurchases.Size = new Size(230, 44);
+            btnPurchases.Size = new Size(213, 44);
             btnPurchases.TabIndex = 2;
             btnPurchases.Tag = "Compras";
             btnPurchases.Text = "  Compras";
@@ -319,7 +357,7 @@
             btnMainMenu.Location = new Point(0, 73);
             btnMainMenu.Name = "btnMainMenu";
             btnMainMenu.Padding = new Padding(10, 0, 0, 0);
-            btnMainMenu.Size = new Size(230, 44);
+            btnMainMenu.Size = new Size(213, 44);
             btnMainMenu.TabIndex = 1;
             btnMainMenu.Tag = "Inicio";
             btnMainMenu.Text = "  Inicio";
@@ -335,7 +373,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(230, 73);
+            panel1.Size = new Size(213, 73);
             panel1.TabIndex = 0;
             // 
             // lblTitleDash
@@ -363,6 +401,28 @@
             btnMenu.TabIndex = 1;
             btnMenu.UseVisualStyleBackColor = true;
             btnMenu.Click += btnMenu_Click;
+            // 
+            // btnSignOut
+            // 
+            btnSignOut.FlatAppearance.BorderSize = 0;
+            btnSignOut.FlatStyle = FlatStyle.Flat;
+            btnSignOut.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSignOut.ForeColor = SystemColors.ControlLightLight;
+            btnSignOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            btnSignOut.IconColor = Color.White;
+            btnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSignOut.IconSize = 30;
+            btnSignOut.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSignOut.Location = new Point(217, 463);
+            btnSignOut.Name = "btnSignOut";
+            btnSignOut.Padding = new Padding(10, 0, 0, 15);
+            btnSignOut.Size = new Size(230, 44);
+            btnSignOut.TabIndex = 6;
+            btnSignOut.Tag = "Cerrar Sesion";
+            btnSignOut.Text = "  Cerrar Sesion";
+            btnSignOut.TextAlign = ContentAlignment.MiddleLeft;
+            btnSignOut.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSignOut.UseVisualStyleBackColor = true;
             // 
             // panelTitleBar
             // 
@@ -432,52 +492,29 @@
             // 
             panelChildForm.BackColor = Color.White;
             panelChildForm.Controls.Add(pictureBox1);
+            panelChildForm.Controls.Add(btnSignOut);
             panelChildForm.Dock = DockStyle.Fill;
             panelChildForm.Location = new Point(230, 24);
             panelChildForm.Name = "panelChildForm";
-            panelChildForm.Size = new Size(704, 557);
+            panelChildForm.Size = new Size(704, 580);
             panelChildForm.TabIndex = 2;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(203, 94);
+            pictureBox1.Location = new Point(203, 106);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(306, 336);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // iconButton1
-            // 
-            iconButton1.Dock = DockStyle.Top;
-            iconButton1.FlatAppearance.BorderSize = 0;
-            iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton1.ForeColor = SystemColors.ControlLightLight;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Print;
-            iconButton1.IconColor = Color.White;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 30;
-            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(0, 502);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(10, 0, 0, 0);
-            iconButton1.Size = new Size(230, 44);
-            iconButton1.TabIndex = 14;
-            iconButton1.Tag = "Recursos Humanos";
-            iconButton1.Text = "Buscar Factura";
-            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton1.UseVisualStyleBackColor = true;
-            iconButton1.Click += iconButton1_Click;
-            // 
             // FRMDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 581);
+            ClientSize = new Size(934, 604);
             ControlBox = false;
             Controls.Add(panelChildForm);
             Controls.Add(panelTitleBar);
@@ -491,6 +528,7 @@
             ResizeEnd += FRMDashboard_ResizeEnd;
             panelMenu.ResumeLayout(false);
             panelInventorySubmenu.ResumeLayout(false);
+            panelSalesSubmenu.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panelTitleBar.ResumeLayout(false);
@@ -515,7 +553,6 @@
         private FontAwesome.Sharp.IconButton btnPurchases;
         private FontAwesome.Sharp.IconButton btnConsultInventory;
         private FontAwesome.Sharp.IconButton btnSales;
-        private FontAwesome.Sharp.IconButton btnHumanResources;
         private FontAwesome.Sharp.IconButton btnFinances;
         private Panel panelInventorySubmenu;
         private FontAwesome.Sharp.IconButton btnDeleteInventory;
@@ -523,5 +560,8 @@
         private FontAwesome.Sharp.IconButton btnInventory;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private Panel panelSalesSubmenu;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }
