@@ -113,3 +113,4 @@ C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\o
 C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.pdb
 C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.genruntimeconfig.cache
 C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ref\ClinicalApplication.dll
+C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.TestOpenPdf.resources
