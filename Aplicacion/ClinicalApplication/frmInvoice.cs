@@ -43,7 +43,7 @@ namespace ClinicalApplication
                 iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(Properties.Resources.logo, System.Drawing.Imaging.ImageFormat.Png);
                 img.ScaleToFit(120, 120);
                 img.Alignment = iTextSharp.text.Image.UNDERLYING;
-                img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top-80);
+                img.SetAbsolutePosition(pdfDoc.LeftMargin, pdfDoc.Top-100);
                 pdfDoc.Add(img);
 
                 using (StringReader sr = new StringReader(htmlContent))

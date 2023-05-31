@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO; // Agregar esta directiva
 using System.Diagnostics; // Agregar esta directiva
 using System.Data.SqlClient; // Agregar esta directiva
+using static iTextSharp.tool.xml.html.HTML;
 
 namespace ClinicalApplication
 {
@@ -79,5 +80,30 @@ namespace ClinicalApplication
         {
             this.Close();
         }
+
+        private void TestOpenPdf_Load(object sender, EventArgs e)
+        {
+            DataBase dataBase = new DataBase();
+            String qprocedure = "viewinvoice";
+
+
+            if (dataBase.ExecuteQuery(qprocedure))
+            {
+                grdVistaFactura.Rows.Clear();
+
+                while (dataBase.table.Read())
+                {
+                    grdVistaFactura.Rows.Add(Convert.ToString(dataBase.table.GetInt32(0)), dataBase.table.GetString(1), dataBase.table.GetString(3), Convert.ToString(dataBase.table.GetDateTime(4)), dataBase.table.GetString(5), dataBase.table.GetString(6));
+                }
+
+            }
+            else
+            {
+
+                MessageBox.Show("Error en la base de datos");
+            }
+            dataBase.CloseConnection();
+        }
     }
 }
+
