@@ -86,5 +86,10 @@ namespace ClinicalApplication
                 && !string.IsNullOrEmpty(txtbStartingAmount.Text) && !string.IsNullOrEmpty(txtbPrice.Text)
                 && cbCategoryAddInventary.SelectedIndex > -1;
         }
+
+        private void btnPurcharseBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

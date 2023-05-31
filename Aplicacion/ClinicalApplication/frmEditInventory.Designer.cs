@@ -41,6 +41,7 @@
             label1 = new Label();
             customButton1 = new Controls.CustomButton();
             cmdUpdate = new Controls.CustomButton();
+            btnPurcharseBack = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(25, 12);
+            groupBox1.Location = new Point(78, 94);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(335, 347);
             groupBox1.TabIndex = 1;
@@ -160,15 +161,16 @@
             // 
             // customButton1
             // 
-            customButton1.BackColor = Color.MediumSlateBlue;
-            customButton1.BackgroundColor = Color.MediumSlateBlue;
+            customButton1.BackColor = Color.DodgerBlue;
+            customButton1.BackgroundColor = Color.DodgerBlue;
             customButton1.BorderColor = Color.PaleVioletRed;
             customButton1.BorderRadius = 0;
             customButton1.BorderSize = 0;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             customButton1.ForeColor = Color.White;
-            customButton1.Location = new Point(366, 48);
+            customButton1.Location = new Point(476, 181);
             customButton1.Name = "customButton1";
             customButton1.Size = new Size(150, 40);
             customButton1.TabIndex = 2;
@@ -179,15 +181,16 @@
             // 
             // cmdUpdate
             // 
-            cmdUpdate.BackColor = Color.MediumSlateBlue;
-            cmdUpdate.BackgroundColor = Color.MediumSlateBlue;
+            cmdUpdate.BackColor = Color.DodgerBlue;
+            cmdUpdate.BackgroundColor = Color.DodgerBlue;
             cmdUpdate.BorderColor = Color.PaleVioletRed;
             cmdUpdate.BorderRadius = 0;
             cmdUpdate.BorderSize = 0;
             cmdUpdate.FlatAppearance.BorderSize = 0;
             cmdUpdate.FlatStyle = FlatStyle.Flat;
+            cmdUpdate.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             cmdUpdate.ForeColor = Color.White;
-            cmdUpdate.Location = new Point(366, 126);
+            cmdUpdate.Location = new Point(476, 267);
             cmdUpdate.Name = "cmdUpdate";
             cmdUpdate.Size = new Size(150, 40);
             cmdUpdate.TabIndex = 3;
@@ -196,14 +199,33 @@
             cmdUpdate.UseVisualStyleBackColor = false;
             cmdUpdate.Click += cmdUpdate_Click;
             // 
+            // btnPurcharseBack
+            // 
+            btnPurcharseBack.BackColor = Color.IndianRed;
+            btnPurcharseBack.FlatAppearance.BorderSize = 0;
+            btnPurcharseBack.FlatStyle = FlatStyle.Flat;
+            btnPurcharseBack.IconChar = FontAwesome.Sharp.IconChar.X;
+            btnPurcharseBack.IconColor = Color.White;
+            btnPurcharseBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPurcharseBack.IconSize = 20;
+            btnPurcharseBack.Location = new Point(620, 35);
+            btnPurcharseBack.Name = "btnPurcharseBack";
+            btnPurcharseBack.Size = new Size(45, 24);
+            btnPurcharseBack.TabIndex = 8;
+            btnPurcharseBack.UseVisualStyleBackColor = false;
+            btnPurcharseBack.Click += btnPurcharseBack_Click;
+            // 
             // frmEditInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(704, 557);
+            Controls.Add(btnPurcharseBack);
             Controls.Add(cmdUpdate);
             Controls.Add(customButton1);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmEditInventory";
             Text = "frmEditInventory";
             groupBox1.ResumeLayout(false);
@@ -226,5 +248,6 @@
         private Label label1;
         private Controls.CustomButton customButton1;
         private Controls.CustomButton cmdUpdate;
+        private FontAwesome.Sharp.IconButton btnPurcharseBack;
     }
 }

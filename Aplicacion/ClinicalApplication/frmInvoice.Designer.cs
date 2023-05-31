@@ -68,7 +68,7 @@
             btnCrearPDF.FlatStyle = FlatStyle.Flat;
             btnCrearPDF.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCrearPDF.ForeColor = Color.White;
-            btnCrearPDF.Location = new Point(379, 249);
+            btnCrearPDF.Location = new Point(414, 249);
             btnCrearPDF.Name = "btnCrearPDF";
             btnCrearPDF.Size = new Size(141, 56);
             btnCrearPDF.TabIndex = 1;
@@ -93,7 +93,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(34, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(561, 78);
             groupBox1.TabIndex = 4;
@@ -141,7 +141,7 @@
             groupBox2.Controls.Add(txtDescription);
             groupBox2.Controls.Add(label3);
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox2.Location = new Point(12, 96);
+            groupBox2.Location = new Point(34, 96);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(297, 216);
             groupBox2.TabIndex = 5;
@@ -208,7 +208,7 @@
             groupBox3.Controls.Add(txtType);
             groupBox3.Controls.Add(label5);
             groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox3.Location = new Point(327, 96);
+            groupBox3.Location = new Point(349, 96);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(246, 141);
             groupBox3.TabIndex = 6;
@@ -302,7 +302,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(688, 541);
+            BackColor = Color.White;
+            ClientSize = new Size(704, 557);
             Controls.Add(btnPurcharseBack);
             Controls.Add(grdPreviewBill);
             Controls.Add(groupBox3);

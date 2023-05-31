@@ -74,7 +74,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(230, 604);
+            panelMenu.Size = new Size(230, 581);
             panelMenu.TabIndex = 0;
             // 
             // btnHumanResources
@@ -267,7 +267,7 @@
             btnSignOut.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSignOut.IconSize = 30;
             btnSignOut.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSignOut.Location = new Point(0, 560);
+            btnSignOut.Location = new Point(0, 537);
             btnSignOut.Name = "btnSignOut";
             btnSignOut.Padding = new Padding(10, 0, 0, 15);
             btnSignOut.Size = new Size(230, 44);
@@ -433,14 +433,14 @@
             panelChildForm.Dock = DockStyle.Fill;
             panelChildForm.Location = new Point(230, 24);
             panelChildForm.Name = "panelChildForm";
-            panelChildForm.Size = new Size(704, 580);
+            panelChildForm.Size = new Size(704, 557);
             panelChildForm.TabIndex = 2;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(203, 106);
+            pictureBox1.Location = new Point(203, 94);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(306, 336);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -451,7 +451,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 604);
+            ClientSize = new Size(934, 581);
             ControlBox = false;
             Controls.Add(panelChildForm);
             Controls.Add(panelTitleBar);

@@ -78,8 +78,6 @@ namespace ClinicalApplication
 
             byte[] docData = GeneratePdfFromHtml(paginathtml_texto);
 
-            MessageBox.Show("Data: " + Convert.ToBase64String(docData));
-
             Invoice invoice = new Invoice();
             Boolean validation = false;
 
@@ -117,8 +115,6 @@ namespace ClinicalApplication
                 inventory.Id = elementInvoice.Id1;
                 inventory.Quantity = elementInvoice.Quantity1;
 
-                MessageBox.Show("Id: " + elementInvoice.Id1);
-                MessageBox.Show("Quantity: " + elementInvoice.Quantity1);
                 if (inventory.updateQuantity())
                 {
                     MessageBox.Show("Actualizado");
@@ -220,12 +216,11 @@ namespace ClinicalApplication
 
         private void cboMedicaments_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cboMedicaments_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Se cambia");
             DataBase dataBase = new DataBase();
             String qprocedure;
             qprocedure = "viewInventoryByClinic @clinicId='" + SG.user.ClincId + "'";

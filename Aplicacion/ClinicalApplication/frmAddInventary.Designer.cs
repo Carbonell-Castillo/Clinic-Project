@@ -160,11 +160,14 @@
             // 
             // btnAddObjectInventary
             // 
-            btnAddObjectInventary.BackColor = Color.White;
+            btnAddObjectInventary.BackColor = Color.DodgerBlue;
+            btnAddObjectInventary.FlatAppearance.BorderSize = 0;
+            btnAddObjectInventary.FlatStyle = FlatStyle.Flat;
             btnAddObjectInventary.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddObjectInventary.ForeColor = Color.White;
             btnAddObjectInventary.Location = new Point(286, 447);
             btnAddObjectInventary.Name = "btnAddObjectInventary";
-            btnAddObjectInventary.Size = new Size(125, 34);
+            btnAddObjectInventary.Size = new Size(133, 40);
             btnAddObjectInventary.TabIndex = 1;
             btnAddObjectInventary.Text = "Agregar";
             btnAddObjectInventary.UseVisualStyleBackColor = false;
@@ -191,7 +194,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(688, 541);
+            ClientSize = new Size(704, 557);
             Controls.Add(btnPurcharseBack);
             Controls.Add(btnAddObjectInventary);
             Controls.Add(groupBox1);

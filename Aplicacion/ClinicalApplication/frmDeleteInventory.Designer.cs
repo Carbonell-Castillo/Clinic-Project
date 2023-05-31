@@ -41,20 +41,22 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            btnPurcharseBack = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // cmdDelete
             // 
-            cmdDelete.BackColor = Color.MediumSlateBlue;
-            cmdDelete.BackgroundColor = Color.MediumSlateBlue;
+            cmdDelete.BackColor = Color.DodgerBlue;
+            cmdDelete.BackgroundColor = Color.DodgerBlue;
             cmdDelete.BorderColor = Color.PaleVioletRed;
             cmdDelete.BorderRadius = 0;
             cmdDelete.BorderSize = 0;
             cmdDelete.FlatAppearance.BorderSize = 0;
             cmdDelete.FlatStyle = FlatStyle.Flat;
+            cmdDelete.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             cmdDelete.ForeColor = Color.White;
-            cmdDelete.Location = new Point(390, 140);
+            cmdDelete.Location = new Point(476, 267);
             cmdDelete.Name = "cmdDelete";
             cmdDelete.Size = new Size(150, 40);
             cmdDelete.TabIndex = 6;
@@ -65,15 +67,16 @@
             // 
             // customButton1
             // 
-            customButton1.BackColor = Color.MediumSlateBlue;
-            customButton1.BackgroundColor = Color.MediumSlateBlue;
+            customButton1.BackColor = Color.DodgerBlue;
+            customButton1.BackgroundColor = Color.DodgerBlue;
             customButton1.BorderColor = Color.PaleVioletRed;
             customButton1.BorderRadius = 0;
             customButton1.BorderSize = 0;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
+            customButton1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             customButton1.ForeColor = Color.White;
-            customButton1.Location = new Point(390, 62);
+            customButton1.Location = new Point(476, 181);
             customButton1.Name = "customButton1";
             customButton1.Size = new Size(150, 40);
             customButton1.TabIndex = 5;
@@ -94,7 +97,7 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(49, 26);
+            groupBox1.Location = new Point(78, 94);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(335, 347);
             groupBox1.TabIndex = 4;
@@ -196,14 +199,33 @@
             label1.TabIndex = 0;
             label1.Text = "Nombre:";
             // 
+            // btnPurcharseBack
+            // 
+            btnPurcharseBack.BackColor = Color.IndianRed;
+            btnPurcharseBack.FlatAppearance.BorderSize = 0;
+            btnPurcharseBack.FlatStyle = FlatStyle.Flat;
+            btnPurcharseBack.IconChar = FontAwesome.Sharp.IconChar.X;
+            btnPurcharseBack.IconColor = Color.White;
+            btnPurcharseBack.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPurcharseBack.IconSize = 20;
+            btnPurcharseBack.Location = new Point(620, 35);
+            btnPurcharseBack.Name = "btnPurcharseBack";
+            btnPurcharseBack.Size = new Size(45, 24);
+            btnPurcharseBack.TabIndex = 7;
+            btnPurcharseBack.UseVisualStyleBackColor = false;
+            btnPurcharseBack.Click += btnPurcharseBack_Click;
+            // 
             // frmDeleteInventory
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.White;
+            ClientSize = new Size(704, 557);
+            Controls.Add(btnPurcharseBack);
             Controls.Add(cmdDelete);
             Controls.Add(customButton1);
             Controls.Add(groupBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmDeleteInventory";
             Text = "frmDeleteInventory";
             groupBox1.ResumeLayout(false);
@@ -226,5 +248,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private FontAwesome.Sharp.IconButton btnPurcharseBack;
     }
 }

@@ -291,16 +291,17 @@ namespace ClinicalApplication
         {
             hideSubMenu();
 
-            frmEditInventory editInventory = new frmEditInventory();
-            editInventory.Show();
+            openChildFormInPanel(new frmEditInventory());
+
+            hideSubMenu();
 
         }
 
         private void btnDeleteInventory_Click(object sender, EventArgs e)
         {
+            openChildFormInPanel(new frmDeleteInventory());
+
             hideSubMenu();
-            frmDeleteInventory deleteInventory = new frmDeleteInventory();
-            deleteInventory.Show();
         }
 
         private void btnSales_Click(object sender, EventArgs e)

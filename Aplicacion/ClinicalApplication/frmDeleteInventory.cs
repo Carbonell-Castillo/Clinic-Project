@@ -53,5 +53,10 @@ namespace ClinicalApplication
 
             }
         }
+
+        private void btnPurcharseBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

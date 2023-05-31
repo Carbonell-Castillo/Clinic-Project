@@ -170,7 +170,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(688, 541);
+            ClientSize = new Size(704, 557);
             Controls.Add(btnConsultInventoryClose);
             Controls.Add(btnConsultByName);
             Controls.Add(txtConsultByName);
