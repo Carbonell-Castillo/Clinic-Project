@@ -9,5 +9,9 @@ namespace ClinicalApplication
     internal class SG
     {
         public static User user;
+
+        
     }
+
+
 }

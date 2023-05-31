@@ -20,6 +20,8 @@ namespace ClinicalApplication
         public System.Data.SqlClient.SqlDataReader table;
         public string errorMessage;
 
+        public SqlConnection Connection { get => connection; set => connection = value; }
+
         //Este metodo se encarga de establecer la conexion a la base de datos
         public bool Connect()
         {
@@ -81,5 +83,6 @@ namespace ClinicalApplication
                 return false;
             }
         }
+
     }
 }

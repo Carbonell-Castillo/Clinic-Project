@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,8 @@ namespace ClinicalApplication
         public double Price { get => price; set => price = value; }
         public string ClinicId { get => clinicId; set => clinicId = value; }
 
-        public bool save() {
+        public bool save()
+        {
             DataBase dataBase = new DataBase();
             string qprocedure;
             id = "'" + id + "'";
@@ -56,13 +58,111 @@ namespace ClinicalApplication
             {
                 return true;
             }
-            else {
+            else
+            {
                 MessageBox.Show("Error in save data");
                 return false;
             }
+            dataBase.CloseConnection();
+        }
 
+        public bool updateQuantity()
+        {
+            DataBase dataBase = new DataBase();
+            string qprocedure;
+            id = "'" + id + "'";
 
+            qprocedure = "updateInventoryById @id=" + id;
+            qprocedure = qprocedure + ",@newQuantity=" + quantity;
+
+            if (dataBase.ExecuteQuery(qprocedure))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Error in save data");
+                return false;
+            }
+            dataBase.CloseConnection();
+        }
+
+        public bool searchProduct(String idSearch) {
+            DataBase dataBase = new DataBase();
+
+            String qprocedure;
+
+            qprocedure = "searchInventoryById @id= '" + idSearch + "'";
+
+            if (dataBase.ExecuteQuery(qprocedure)) {
+                if (dataBase.table.Read())
+                {
+                    id = dataBase.table.GetString(0);
+                    name = dataBase.table.GetString(4);
+                    quantity = dataBase.table.GetInt32(5);
+                    price= (double)dataBase.table.GetDecimal(6);
+                    categoryId = dataBase.table.GetString(2);
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error in database");
+                return false;
+            }
+            dataBase.CloseConnection();
 
         }
+        public bool updateAll() {
+            DataBase dataBase = new DataBase();
+            string qprocedure;
+            id = "'" + id + "'";
+            clinicId = "'" + clinicId + "'";
+            categoryId = "'" + categoryId + "'";
+            name = "'" + name + "'";
+
+            qprocedure = "updateInventoryByIdAll @id=" + id;
+            qprocedure = qprocedure + ",@clinicId=" + clinicId;
+            qprocedure = qprocedure + ",@categoryId=" + categoryId;
+            qprocedure = qprocedure + ",@name=" + name;
+            qprocedure = qprocedure + ",@quantity=" + quantity;
+            qprocedure = qprocedure + ",@price=" + price;
+
+            if (dataBase.ExecuteQuery(qprocedure))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Error in save data");
+                return false;
+            }
+            dataBase.CloseConnection();
+        }
+
+        public bool deleteProduct(String idDelete)
+        {
+            DataBase dataBase = new DataBase();
+
+            String qprocedure;
+
+            qprocedure = "deleteInventoryById @id= '" + idDelete + "'";
+
+            if (dataBase.ExecuteQuery(qprocedure))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Error in save data");
+                return false;
+            }
+            dataBase.CloseConnection();
+
+        }
+
     }
 }

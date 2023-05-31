@@ -290,11 +290,17 @@ namespace ClinicalApplication
         private void btnModifyInventory_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+
+            frmEditInventory editInventory = new frmEditInventory();
+            editInventory.Show();
+
         }
 
         private void btnDeleteInventory_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            frmDeleteInventory deleteInventory = new frmDeleteInventory();
+            deleteInventory.Show();
         }
 
         private void btnSales_Click(object sender, EventArgs e)

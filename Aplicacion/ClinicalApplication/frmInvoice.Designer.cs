@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             btnCrearPDF = new Controls.CustomButton();
             label1 = new Label();
             groupBox1 = new GroupBox();
@@ -192,6 +192,7 @@
             cboMedicaments.Name = "cboMedicaments";
             cboMedicaments.Size = new Size(188, 29);
             cboMedicaments.TabIndex = 7;
+            cboMedicaments.SelectedIndexChanged += cboMedicaments_SelectedIndexChanged_1;
             // 
             // txtDescription
             // 
@@ -251,15 +252,15 @@
             // 
             grdPreviewBill.AllowUserToAddRows = false;
             grdPreviewBill.BackgroundColor = Color.WhiteSmoke;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new Padding(1);
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            grdPreviewBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new Padding(1);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            grdPreviewBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             grdPreviewBill.ColumnHeadersHeight = 30;
             grdPreviewBill.EnableHeadersVisualStyles = false;
             grdPreviewBill.GridColor = Color.DimGray;
@@ -268,14 +269,14 @@
             grdPreviewBill.Name = "grdPreviewBill";
             grdPreviewBill.ReadOnly = true;
             grdPreviewBill.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            grdPreviewBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            grdPreviewBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             grdPreviewBill.RowTemplate.Height = 25;
             grdPreviewBill.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdPreviewBill.Size = new Size(537, 211);

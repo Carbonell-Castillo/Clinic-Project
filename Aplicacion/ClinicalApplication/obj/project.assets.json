@@ -549,23 +549,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP2017\\.nuget\\packages\\": {},
+    "C:\\Users\\bruce\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP2017\\Documents\\GitHub\\Proyect_TS_ClinicApplication\\Aplicacion\\ClinicalApplication\\ClinicalApplication.csproj",
+      "projectUniqueName": "C:\\Users\\bruce\\OneDrive\\Escritorio\\Proyecto Daniel\\Proyecto Version 2 Daniel\\Clinic-Project\\Aplicacion\\ClinicalApplication\\ClinicalApplication.csproj",
       "projectName": "ClinicalApplication",
-      "projectPath": "C:\\Users\\HP2017\\Documents\\GitHub\\Proyect_TS_ClinicApplication\\Aplicacion\\ClinicalApplication\\ClinicalApplication.csproj",
-      "packagesPath": "C:\\Users\\HP2017\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP2017\\Documents\\GitHub\\Proyect_TS_ClinicApplication\\Aplicacion\\ClinicalApplication\\obj\\",
+      "projectPath": "C:\\Users\\bruce\\OneDrive\\Escritorio\\Proyecto Daniel\\Proyecto Version 2 Daniel\\Clinic-Project\\Aplicacion\\ClinicalApplication\\ClinicalApplication.csproj",
+      "packagesPath": "C:\\Users\\bruce\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bruce\\OneDrive\\Escritorio\\Proyecto Daniel\\Proyecto Version 2 Daniel\\Clinic-Project\\Aplicacion\\ClinicalApplication\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HP2017\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bruce\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
