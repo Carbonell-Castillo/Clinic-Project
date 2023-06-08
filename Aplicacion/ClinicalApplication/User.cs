@@ -15,12 +15,13 @@ namespace ClinicalApplication
         private String roleName;
         private String username;
         private String name;
+        private int monthlySalary;
 
         public User()
         {
         }
 
-        public User(string userId, string clincId, int roleId, string roleName, string username, string name)
+        public User(string userId, string clincId, int roleId, string roleName, string username, string name, int monthlySalary)
         {
             this.userId = userId;
             this.clincId = clincId;
@@ -28,6 +29,7 @@ namespace ClinicalApplication
             this.roleName = roleName;
             this.username = username;
             this.name = name;
+            this.monthlySalary = monthlySalary;
         }
 
         public string UserId { get => userId; set => userId = value; }
@@ -36,6 +38,7 @@ namespace ClinicalApplication
         public string RoleName { get => roleName; set => roleName = value; }
         public string Username { get => username; set => username = value; }
         public string Name { get => name; set => name = value; }
+        public int MonthlySalary { get => monthlySalary; set => monthlySalary = value; }
 
         //Funcion que sirve para validar el usuario que se ingreso
         public bool ValidateUser(string usernameValidate, string passwordValidate)

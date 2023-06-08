@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMDashboard));
             panelMenu = new Panel();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            panelDDHHSubmenu = new Panel();
+            btnManageEmployees = new FontAwesome.Sharp.IconButton();
+            btnPayroll = new FontAwesome.Sharp.IconButton();
+            btnDDHH = new FontAwesome.Sharp.IconButton();
             btnFinances = new FontAwesome.Sharp.IconButton();
             panelInventorySubmenu = new Panel();
             btnDeleteInventory = new FontAwesome.Sharp.IconButton();
@@ -54,6 +57,7 @@
             panelChildForm = new Panel();
             pictureBox1 = new PictureBox();
             panelMenu.SuspendLayout();
+            panelDDHHSubmenu.SuspendLayout();
             panelInventorySubmenu.SuspendLayout();
             panelSalesSubmenu.SuspendLayout();
             panel1.SuspendLayout();
@@ -66,7 +70,8 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = SystemColors.Highlight;
-            panelMenu.Controls.Add(iconButton3);
+            panelMenu.Controls.Add(panelDDHHSubmenu);
+            panelMenu.Controls.Add(btnDDHH);
             panelMenu.Controls.Add(btnFinances);
             panelMenu.Controls.Add(panelInventorySubmenu);
             panelMenu.Controls.Add(btnInventory);
@@ -81,28 +86,86 @@
             panelMenu.Size = new Size(230, 604);
             panelMenu.TabIndex = 0;
             // 
-            // iconButton3
+            // panelDDHHSubmenu
             // 
-            iconButton3.Dock = DockStyle.Top;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            iconButton3.ForeColor = SystemColors.ControlLightLight;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            iconButton3.IconColor = Color.White;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 30;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(0, 564);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Padding = new Padding(10, 0, 0, 0);
-            iconButton3.Size = new Size(213, 44);
-            iconButton3.TabIndex = 16;
-            iconButton3.Tag = "Finanzas";
-            iconButton3.Text = "  Derechos Humanos";
-            iconButton3.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton3.TextImageRelation = TextImageRelation.ImageBeforeText;
-            iconButton3.UseVisualStyleBackColor = true;
+            panelDDHHSubmenu.BackColor = Color.FromArgb(41, 145, 217);
+            panelDDHHSubmenu.Controls.Add(btnManageEmployees);
+            panelDDHHSubmenu.Controls.Add(btnPayroll);
+            panelDDHHSubmenu.Dock = DockStyle.Top;
+            panelDDHHSubmenu.Location = new Point(0, 608);
+            panelDDHHSubmenu.Name = "panelDDHHSubmenu";
+            panelDDHHSubmenu.Size = new Size(213, 96);
+            panelDDHHSubmenu.TabIndex = 17;
+            // 
+            // btnManageEmployees
+            // 
+            btnManageEmployees.Dock = DockStyle.Top;
+            btnManageEmployees.FlatAppearance.BorderSize = 0;
+            btnManageEmployees.FlatStyle = FlatStyle.Flat;
+            btnManageEmployees.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnManageEmployees.ForeColor = SystemColors.ControlLightLight;
+            btnManageEmployees.IconChar = FontAwesome.Sharp.IconChar.DoorClosed;
+            btnManageEmployees.IconColor = Color.White;
+            btnManageEmployees.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnManageEmployees.IconSize = 30;
+            btnManageEmployees.ImageAlign = ContentAlignment.MiddleLeft;
+            btnManageEmployees.Location = new Point(0, 44);
+            btnManageEmployees.Name = "btnManageEmployees";
+            btnManageEmployees.Padding = new Padding(10, 0, 0, 0);
+            btnManageEmployees.Size = new Size(213, 44);
+            btnManageEmployees.TabIndex = 17;
+            btnManageEmployees.Tag = " Humanos";
+            btnManageEmployees.Text = "   Disponer Empleados";
+            btnManageEmployees.UseVisualStyleBackColor = true;
+            btnManageEmployees.Click += btnManageEmployees_Click;
+            // 
+            // btnPayroll
+            // 
+            btnPayroll.Dock = DockStyle.Top;
+            btnPayroll.FlatAppearance.BorderSize = 0;
+            btnPayroll.FlatStyle = FlatStyle.Flat;
+            btnPayroll.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPayroll.ForeColor = SystemColors.ControlLightLight;
+            btnPayroll.IconChar = FontAwesome.Sharp.IconChar.Wallet;
+            btnPayroll.IconColor = Color.White;
+            btnPayroll.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnPayroll.IconSize = 30;
+            btnPayroll.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPayroll.Location = new Point(0, 0);
+            btnPayroll.Name = "btnPayroll";
+            btnPayroll.Padding = new Padding(10, 0, 0, 0);
+            btnPayroll.Size = new Size(213, 44);
+            btnPayroll.TabIndex = 16;
+            btnPayroll.Tag = "Recursos Humanos";
+            btnPayroll.Text = "Planilla de Sueldos";
+            btnPayroll.TextAlign = ContentAlignment.MiddleLeft;
+            btnPayroll.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPayroll.UseVisualStyleBackColor = true;
+            btnPayroll.Click += btnPayroll_Click;
+            // 
+            // btnDDHH
+            // 
+            btnDDHH.Dock = DockStyle.Top;
+            btnDDHH.FlatAppearance.BorderSize = 0;
+            btnDDHH.FlatStyle = FlatStyle.Flat;
+            btnDDHH.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDDHH.ForeColor = SystemColors.ControlLightLight;
+            btnDDHH.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            btnDDHH.IconColor = Color.White;
+            btnDDHH.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDDHH.IconSize = 30;
+            btnDDHH.ImageAlign = ContentAlignment.MiddleLeft;
+            btnDDHH.Location = new Point(0, 564);
+            btnDDHH.Name = "btnDDHH";
+            btnDDHH.Padding = new Padding(10, 0, 0, 0);
+            btnDDHH.Size = new Size(213, 44);
+            btnDDHH.TabIndex = 16;
+            btnDDHH.Tag = "Finanzas";
+            btnDDHH.Text = "  Recursos Humanos";
+            btnDDHH.TextAlign = ContentAlignment.MiddleLeft;
+            btnDDHH.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDDHH.UseVisualStyleBackColor = true;
+            btnDDHH.Click += iconButton3_Click_1;
             // 
             // btnFinances
             // 
@@ -503,7 +566,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(203, 106);
+            pictureBox1.Location = new Point(203, 159);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(306, 336);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -527,6 +590,7 @@
             ResizeBegin += FRMDashboard_ResizeBegin;
             ResizeEnd += FRMDashboard_ResizeEnd;
             panelMenu.ResumeLayout(false);
+            panelDDHHSubmenu.ResumeLayout(false);
             panelInventorySubmenu.ResumeLayout(false);
             panelSalesSubmenu.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -562,6 +626,9 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private Panel panelSalesSubmenu;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btnDDHH;
+        private Panel panelDDHHSubmenu;
+        private FontAwesome.Sharp.IconButton btnPayroll;
+        private FontAwesome.Sharp.IconButton btnManageEmployees;
     }
 }

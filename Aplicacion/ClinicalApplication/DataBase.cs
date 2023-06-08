@@ -11,10 +11,10 @@ namespace ClinicalApplication
     internal class DataBase
     {   //Se crea una instancia de la clase SqlConnection para establecer la conexión a la base de datos. 
         //Este recibe un string el cual es la cadena de conexion a la base de datos a Microsft Azure
-        SqlConnection connection = new SqlConnection("Server=tcp:clinica-prueba.database.windows.net,1433;Initial Catalog=clinicaDB;Persist Security Info=False;User ID=admin12;Password=admin3212*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-        //Se crea una instancia de la clase SqlCommand, que se utilizará para ejecutar
-        //comandos SQL en la base de datos.
-        SqlCommand sqlCommand = new SqlCommand();
+        SqlConnection connection = new SqlConnection("Server=tcp:dbked.database.windows.net,1433;Initial Catalog = dbClinica; Persist Security Info=False;User ID = admin12; Password=admin3212*; MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;");        
+    //Se crea una instancia de la clase SqlCommand, que se utilizará para ejecutar
+    //comandos SQL en la base de datos.
+    SqlCommand sqlCommand = new SqlCommand();
         // Variable de tipo System.Data.SqlClient.SqlDataReader que será utilizada
         // para almacenar los resultados de una consulta SQL
         public System.Data.SqlClient.SqlDataReader table;
