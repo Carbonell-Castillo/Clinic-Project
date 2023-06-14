@@ -116,3 +116,5 @@ C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\o
 C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.TestOpenPdf.resources
 C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.frmPayroll.resources
 C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.frmManageEmployees.resources
+C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.frmBalanceSheet.resources
+C:\Users\HP2017\Documents\GitHub\Clinic-Project\Aplicacion\ClinicalApplication\obj\Debug\net7.0-windows\ClinicalApplication.frmIncomeStatement.resources

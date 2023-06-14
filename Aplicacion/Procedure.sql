@@ -150,3 +150,107 @@ SELECT inventory.id, clinicId, categoryId, category.name, inventory.name, quanti
 FROM inventory INNER JOIN category
 ON inventory.categoryId = category.id
 WHERE inventory.id = @id;
+
+
+/*Financial*/
+
+CREATE PROCEDURE addIncomeStatement
+    @rowId int,
+    @counts varchar(30),
+    @quantity decimal(10, 2)
+AS
+BEGIN
+    INSERT INTO incomeStatement (rowId, counts, quantity)
+    VALUES (@rowId, @counts, @quantity);
+END;
+GO;
+
+CREATE PROCEDURE viewIncomeStatement
+AS
+BEGIN
+    SELECT * FROM incomeStatement;
+END;
+GO;
+
+CREATE PROCEDURE UpdateIncomeStatement
+    @rowId int,
+    @counts varchar(30),
+    @quantity decimal(10, 2)
+AS
+BEGIN
+    UPDATE incomeStatement
+    SET counts = @counts,
+        quantity = @quantity
+    WHERE rowId = @rowId;
+END;
+GO;
+
+CREATE PROCEDURE GetNetIncome
+AS
+BEGIN
+    SELECT quantity
+    FROM incomeStatement
+    WHERE counts = 'Ingresos Netos';
+END;
+
+CREATE PROCEDURE addBalanceSheetActive
+    @rowId int,
+    @counts varchar(30),
+    @quantity decimal(10, 2)
+AS
+BEGIN
+    INSERT INTO BalanceSheetActive (rowId, counts, quantity)
+    VALUES (@rowId, @counts, @quantity);
+END;
+GO;
+
+CREATE PROCEDURE viewBalanceSheetActive
+AS
+BEGIN
+    SELECT * FROM BalanceSheetActive;
+END;
+GO;
+
+CREATE PROCEDURE updateBalanceSheetActive
+    @rowId int,
+    @counts varchar(30),
+    @quantity decimal(10, 2)
+AS
+BEGIN
+    UPDATE BalanceSheetActive
+    SET counts = @counts,
+        quantity = @quantity
+    WHERE rowId = @rowId;
+END;
+GO;
+
+CREATE PROCEDURE addBalanceSheetPassiveCapital
+    @rowId int,
+    @counts varchar(30),
+    @quantity decimal(10, 2)
+AS
+BEGIN
+    INSERT INTO BalanceSheetPassiveCapital (rowId, counts, quantity)
+    VALUES (@rowId, @counts, @quantity);
+END;
+GO;
+
+CREATE PROCEDURE viewBalanceSheetPassiveCapital
+AS
+BEGIN
+    SELECT * FROM BalanceSheetPassiveCapital;
+END;
+GO;
+
+CREATE PROCEDURE updateBalanceSheetPassiveCapital
+    @rowId int,
+    @counts varchar(30),
+    @quantity decimal(10, 2)
+AS
+BEGIN
+    UPDATE BalanceSheetPassiveCapital
+    SET counts = @counts,
+        quantity = @quantity
+    WHERE rowId = @rowId;
+END;
+GO;

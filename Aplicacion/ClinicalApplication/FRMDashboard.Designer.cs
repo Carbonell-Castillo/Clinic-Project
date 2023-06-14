@@ -30,11 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMDashboard));
             panelMenu = new Panel();
+            panelFinanceSubmenu = new Panel();
+            btnIncomeStatement = new FontAwesome.Sharp.IconButton();
+            btnBalanceSheet = new FontAwesome.Sharp.IconButton();
+            btnAddFinancialAccount = new FontAwesome.Sharp.IconButton();
+            btnFinance = new FontAwesome.Sharp.IconButton();
             panelDDHHSubmenu = new Panel();
             btnManageEmployees = new FontAwesome.Sharp.IconButton();
             btnPayroll = new FontAwesome.Sharp.IconButton();
             btnDDHH = new FontAwesome.Sharp.IconButton();
-            btnFinances = new FontAwesome.Sharp.IconButton();
             panelInventorySubmenu = new Panel();
             btnDeleteInventory = new FontAwesome.Sharp.IconButton();
             btnModifyInventory = new FontAwesome.Sharp.IconButton();
@@ -57,6 +61,7 @@
             panelChildForm = new Panel();
             pictureBox1 = new PictureBox();
             panelMenu.SuspendLayout();
+            panelFinanceSubmenu.SuspendLayout();
             panelDDHHSubmenu.SuspendLayout();
             panelInventorySubmenu.SuspendLayout();
             panelSalesSubmenu.SuspendLayout();
@@ -70,9 +75,10 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = SystemColors.Highlight;
+            panelMenu.Controls.Add(panelFinanceSubmenu);
+            panelMenu.Controls.Add(btnFinance);
             panelMenu.Controls.Add(panelDDHHSubmenu);
             panelMenu.Controls.Add(btnDDHH);
-            panelMenu.Controls.Add(btnFinances);
             panelMenu.Controls.Add(panelInventorySubmenu);
             panelMenu.Controls.Add(btnInventory);
             panelMenu.Controls.Add(panelSalesSubmenu);
@@ -86,13 +92,120 @@
             panelMenu.Size = new Size(230, 604);
             panelMenu.TabIndex = 0;
             // 
+            // panelFinanceSubmenu
+            // 
+            panelFinanceSubmenu.BackColor = Color.FromArgb(41, 145, 217);
+            panelFinanceSubmenu.Controls.Add(btnIncomeStatement);
+            panelFinanceSubmenu.Controls.Add(btnBalanceSheet);
+            panelFinanceSubmenu.Controls.Add(btnAddFinancialAccount);
+            panelFinanceSubmenu.Dock = DockStyle.Top;
+            panelFinanceSubmenu.Location = new Point(0, 704);
+            panelFinanceSubmenu.Name = "panelFinanceSubmenu";
+            panelFinanceSubmenu.Size = new Size(213, 167);
+            panelFinanceSubmenu.TabIndex = 13;
+            // 
+            // btnIncomeStatement
+            // 
+            btnIncomeStatement.Dock = DockStyle.Top;
+            btnIncomeStatement.FlatAppearance.BorderSize = 0;
+            btnIncomeStatement.FlatStyle = FlatStyle.Flat;
+            btnIncomeStatement.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnIncomeStatement.ForeColor = SystemColors.ControlLightLight;
+            btnIncomeStatement.IconChar = FontAwesome.Sharp.IconChar.SquarePollVertical;
+            btnIncomeStatement.IconColor = Color.White;
+            btnIncomeStatement.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnIncomeStatement.IconSize = 30;
+            btnIncomeStatement.ImageAlign = ContentAlignment.MiddleLeft;
+            btnIncomeStatement.Location = new Point(0, 100);
+            btnIncomeStatement.Name = "btnIncomeStatement";
+            btnIncomeStatement.Padding = new Padding(10, 0, 0, 0);
+            btnIncomeStatement.Size = new Size(213, 50);
+            btnIncomeStatement.TabIndex = 7;
+            btnIncomeStatement.Tag = "Eliminar";
+            btnIncomeStatement.Text = "      Estado de \r\n     Resultados";
+            btnIncomeStatement.TextAlign = ContentAlignment.MiddleLeft;
+            btnIncomeStatement.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnIncomeStatement.UseVisualStyleBackColor = true;
+            btnIncomeStatement.Click += btnIncomeStatement_Click;
+            // 
+            // btnBalanceSheet
+            // 
+            btnBalanceSheet.Dock = DockStyle.Top;
+            btnBalanceSheet.FlatAppearance.BorderSize = 0;
+            btnBalanceSheet.FlatStyle = FlatStyle.Flat;
+            btnBalanceSheet.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBalanceSheet.ForeColor = SystemColors.ControlLightLight;
+            btnBalanceSheet.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            btnBalanceSheet.IconColor = Color.White;
+            btnBalanceSheet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnBalanceSheet.IconSize = 30;
+            btnBalanceSheet.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBalanceSheet.Location = new Point(0, 50);
+            btnBalanceSheet.Name = "btnBalanceSheet";
+            btnBalanceSheet.Padding = new Padding(10, 0, 0, 0);
+            btnBalanceSheet.Size = new Size(213, 50);
+            btnBalanceSheet.TabIndex = 6;
+            btnBalanceSheet.Tag = "Modificar";
+            btnBalanceSheet.Text = "  Balance General";
+            btnBalanceSheet.TextAlign = ContentAlignment.MiddleLeft;
+            btnBalanceSheet.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBalanceSheet.UseVisualStyleBackColor = true;
+            btnBalanceSheet.Click += btnBalanceSheet_Click;
+            // 
+            // btnAddFinancialAccount
+            // 
+            btnAddFinancialAccount.Dock = DockStyle.Top;
+            btnAddFinancialAccount.FlatAppearance.BorderSize = 0;
+            btnAddFinancialAccount.FlatStyle = FlatStyle.Flat;
+            btnAddFinancialAccount.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddFinancialAccount.ForeColor = SystemColors.ControlLightLight;
+            btnAddFinancialAccount.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            btnAddFinancialAccount.IconColor = Color.White;
+            btnAddFinancialAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnAddFinancialAccount.IconSize = 30;
+            btnAddFinancialAccount.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAddFinancialAccount.Location = new Point(0, 0);
+            btnAddFinancialAccount.Name = "btnAddFinancialAccount";
+            btnAddFinancialAccount.Padding = new Padding(10, 0, 0, 0);
+            btnAddFinancialAccount.Size = new Size(213, 50);
+            btnAddFinancialAccount.TabIndex = 5;
+            btnAddFinancialAccount.Tag = "Consultar";
+            btnAddFinancialAccount.Text = "  Añadir cuentas";
+            btnAddFinancialAccount.TextAlign = ContentAlignment.MiddleLeft;
+            btnAddFinancialAccount.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAddFinancialAccount.UseVisualStyleBackColor = true;
+            // 
+            // btnFinance
+            // 
+            btnFinance.Dock = DockStyle.Top;
+            btnFinance.FlatAppearance.BorderSize = 0;
+            btnFinance.FlatStyle = FlatStyle.Flat;
+            btnFinance.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnFinance.ForeColor = SystemColors.ControlLightLight;
+            btnFinance.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
+            btnFinance.IconColor = Color.White;
+            btnFinance.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnFinance.IconSize = 30;
+            btnFinance.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFinance.Location = new Point(0, 660);
+            btnFinance.Name = "btnFinance";
+            btnFinance.Padding = new Padding(10, 0, 0, 0);
+            btnFinance.Size = new Size(213, 44);
+            btnFinance.TabIndex = 18;
+            btnFinance.Tag = "Finanzas";
+            btnFinance.Text = "  Finanzas";
+            btnFinance.TextAlign = ContentAlignment.MiddleLeft;
+            btnFinance.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnFinance.UseVisualStyleBackColor = true;
+            btnFinance.Click += btnFinance_Click;
+            // 
             // panelDDHHSubmenu
             // 
             panelDDHHSubmenu.BackColor = Color.FromArgb(41, 145, 217);
             panelDDHHSubmenu.Controls.Add(btnManageEmployees);
             panelDDHHSubmenu.Controls.Add(btnPayroll);
             panelDDHHSubmenu.Dock = DockStyle.Top;
-            panelDDHHSubmenu.Location = new Point(0, 608);
+            panelDDHHSubmenu.Location = new Point(0, 564);
             panelDDHHSubmenu.Name = "panelDDHHSubmenu";
             panelDDHHSubmenu.Size = new Size(213, 96);
             panelDDHHSubmenu.TabIndex = 17;
@@ -155,7 +268,7 @@
             btnDDHH.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDDHH.IconSize = 30;
             btnDDHH.ImageAlign = ContentAlignment.MiddleLeft;
-            btnDDHH.Location = new Point(0, 564);
+            btnDDHH.Location = new Point(0, 520);
             btnDDHH.Name = "btnDDHH";
             btnDDHH.Padding = new Padding(10, 0, 0, 0);
             btnDDHH.Size = new Size(213, 44);
@@ -166,29 +279,6 @@
             btnDDHH.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDDHH.UseVisualStyleBackColor = true;
             btnDDHH.Click += iconButton3_Click_1;
-            // 
-            // btnFinances
-            // 
-            btnFinances.Dock = DockStyle.Top;
-            btnFinances.FlatAppearance.BorderSize = 0;
-            btnFinances.FlatStyle = FlatStyle.Flat;
-            btnFinances.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnFinances.ForeColor = SystemColors.ControlLightLight;
-            btnFinances.IconChar = FontAwesome.Sharp.IconChar.MoneyCheckDollar;
-            btnFinances.IconColor = Color.White;
-            btnFinances.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnFinances.IconSize = 30;
-            btnFinances.ImageAlign = ContentAlignment.MiddleLeft;
-            btnFinances.Location = new Point(0, 520);
-            btnFinances.Name = "btnFinances";
-            btnFinances.Padding = new Padding(10, 0, 0, 0);
-            btnFinances.Size = new Size(213, 44);
-            btnFinances.TabIndex = 12;
-            btnFinances.Tag = "Finanzas";
-            btnFinances.Text = "  Finanzas";
-            btnFinances.TextAlign = ContentAlignment.MiddleLeft;
-            btnFinances.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnFinances.UseVisualStyleBackColor = true;
             // 
             // panelInventorySubmenu
             // 
@@ -590,6 +680,7 @@
             ResizeBegin += FRMDashboard_ResizeBegin;
             ResizeEnd += FRMDashboard_ResizeEnd;
             panelMenu.ResumeLayout(false);
+            panelFinanceSubmenu.ResumeLayout(false);
             panelDDHHSubmenu.ResumeLayout(false);
             panelInventorySubmenu.ResumeLayout(false);
             panelSalesSubmenu.ResumeLayout(false);
@@ -617,7 +708,6 @@
         private FontAwesome.Sharp.IconButton btnPurchases;
         private FontAwesome.Sharp.IconButton btnConsultInventory;
         private FontAwesome.Sharp.IconButton btnSales;
-        private FontAwesome.Sharp.IconButton btnFinances;
         private Panel panelInventorySubmenu;
         private FontAwesome.Sharp.IconButton btnDeleteInventory;
         private FontAwesome.Sharp.IconButton btnModifyInventory;
@@ -630,5 +720,11 @@
         private Panel panelDDHHSubmenu;
         private FontAwesome.Sharp.IconButton btnPayroll;
         private FontAwesome.Sharp.IconButton btnManageEmployees;
+        private Panel panelFinanceSubmenu;
+        private FontAwesome.Sharp.IconButton btnIncomeStatement;
+        private FontAwesome.Sharp.IconButton btnBalanceSheet;
+        private FontAwesome.Sharp.IconButton btn;
+        private FontAwesome.Sharp.IconButton btnFinance;
+        private FontAwesome.Sharp.IconButton btnAddFinancialAccount;
     }
 }

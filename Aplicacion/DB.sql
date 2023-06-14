@@ -48,3 +48,24 @@ CREATE TABLE inventory (
     quantity int, 
     price decimal
 );
+
+CREATE TABLE incomeStatement (
+    rowId int primary key, 
+    counts varchar(30),
+    quantity DECIMAL(10, 2)
+);
+GO;
+
+CREATE TABLE BalanceSheetActive (
+    rowId int primary key, 
+    counts varchar(30),
+    quantity DECIMAL(10, 2)
+);
+GO;
+
+CREATE TABLE BalanceSheetPassiveCapital (
+    rowId int primary key, 
+    counts varchar(30),
+    quantity DECIMAL(10, 2)
+);
+GO;

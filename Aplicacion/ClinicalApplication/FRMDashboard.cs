@@ -34,6 +34,7 @@ namespace ClinicalApplication
             panelInventorySubmenu.Visible = false;
             panelSalesSubmenu.Visible = false;
             panelDDHHSubmenu.Visible = false;
+            panelFinanceSubmenu.Visible = false;
         }
 
         private void hideSubMenu()
@@ -46,6 +47,9 @@ namespace ClinicalApplication
 
             if (panelDDHHSubmenu.Visible == true)
             { panelDDHHSubmenu.Visible = false; }
+
+            if (panelFinanceSubmenu.Visible == true)
+            { panelFinanceSubmenu.Visible = false; }
         }
 
         private void showSubMenu(Panel subMenu)
@@ -348,6 +352,25 @@ namespace ClinicalApplication
         private void btnManageEmployees_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new frmManageEmployees());
+
+            hideSubMenu();
+        }
+
+        private void btnFinance_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelFinanceSubmenu);
+        }
+
+        private void btnBalanceSheet_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new frmBalanceSheet());
+
+            hideSubMenu();
+        }
+
+        private void btnIncomeStatement_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new frmIncomeStatement());
 
             hideSubMenu();
         }
