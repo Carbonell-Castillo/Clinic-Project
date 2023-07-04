@@ -36,9 +36,11 @@
             customButton1 = new Controls.CustomButton();
             txtUser = new TextBox();
             txtPassword = new TextBox();
+            pibSee = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pibSee).BeginInit();
             SuspendLayout();
             // 
             // pictureBox2
@@ -84,15 +86,15 @@
             // 
             // customButton1
             // 
-            customButton1.BackColor = Color.MediumSlateBlue;
-            customButton1.BackgroundColor = Color.MediumSlateBlue;
+            customButton1.BackColor = Color.DodgerBlue;
+            customButton1.BackgroundColor = Color.DodgerBlue;
             customButton1.BorderColor = Color.PaleVioletRed;
             customButton1.BorderRadius = 0;
             customButton1.BorderSize = 0;
             customButton1.FlatAppearance.BorderSize = 0;
             customButton1.FlatStyle = FlatStyle.Flat;
             customButton1.ForeColor = Color.White;
-            customButton1.Location = new Point(96, 366);
+            customButton1.Location = new Point(96, 383);
             customButton1.Name = "customButton1";
             customButton1.Size = new Size(165, 40);
             customButton1.TabIndex = 16;
@@ -117,12 +119,25 @@
             txtPassword.Size = new Size(228, 29);
             txtPassword.TabIndex = 18;
             // 
+            // pibSee
+            // 
+            pibSee.BackColor = Color.White;
+            pibSee.Image = (Image)resources.GetObject("pibSee.Image");
+            pibSee.Location = new Point(7, 292);
+            pibSee.Name = "pibSee";
+            pibSee.Size = new Size(30, 37);
+            pibSee.SizeMode = PictureBoxSizeMode.Zoom;
+            pibSee.TabIndex = 19;
+            pibSee.TabStop = false;
+            pibSee.Click += pictureBox4_Click;
+            // 
             // frmSignIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(355, 459);
+            Controls.Add(pibSee);
             Controls.Add(txtPassword);
             Controls.Add(txtUser);
             Controls.Add(customButton1);
@@ -137,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pibSee).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,5 +165,6 @@
         private Controls.CustomButton customButton1;
         private TextBox txtUser;
         private TextBox txtPassword;
+        private PictureBox pibSee;
     }
 }

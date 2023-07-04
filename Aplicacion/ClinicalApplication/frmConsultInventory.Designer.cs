@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             grdData = new DataGridView();
             Codigo = new DataGridViewTextBoxColumn();
             Categoria = new DataGridViewTextBoxColumn();
@@ -39,8 +39,6 @@
             Precio = new DataGridViewTextBoxColumn();
             cbConsultItemsData = new ComboBox();
             btnConsult = new Button();
-            txtConsultByName = new TextBox();
-            btnConsultByName = new Button();
             btnConsultInventoryClose = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)grdData).BeginInit();
             SuspendLayout();
@@ -48,34 +46,35 @@
             // grdData
             // 
             grdData.BackgroundColor = Color.WhiteSmoke;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            grdData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            grdData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             grdData.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdData.Columns.AddRange(new DataGridViewColumn[] { Codigo, Categoria, Nombre, Cantidad, Precio });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            grdData.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            grdData.DefaultCellStyle = dataGridViewCellStyle5;
             grdData.Location = new Point(73, 139);
             grdData.Name = "grdData";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.SkyBlue;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            grdData.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            grdData.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.SkyBlue;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            grdData.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             grdData.RowTemplate.Height = 25;
             grdData.Size = new Size(544, 377);
             grdData.TabIndex = 0;
@@ -85,33 +84,38 @@
             // 
             Codigo.HeaderText = "Codigo";
             Codigo.Name = "Codigo";
+            Codigo.ReadOnly = true;
             // 
             // Categoria
             // 
             Categoria.HeaderText = "Categoria";
             Categoria.Name = "Categoria";
+            Categoria.ReadOnly = true;
             // 
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
+            Nombre.ReadOnly = true;
             // 
             // Cantidad
             // 
             Cantidad.HeaderText = "Cantidad";
             Cantidad.Name = "Cantidad";
+            Cantidad.ReadOnly = true;
             // 
             // Precio
             // 
             Precio.HeaderText = "Precio";
             Precio.Name = "Precio";
+            Precio.ReadOnly = true;
             // 
             // cbConsultItemsData
             // 
             cbConsultItemsData.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             cbConsultItemsData.FormattingEnabled = true;
             cbConsultItemsData.Items.AddRange(new object[] { "Medicamentos", "Medias" });
-            cbConsultItemsData.Location = new Point(73, 46);
+            cbConsultItemsData.Location = new Point(112, 96);
             cbConsultItemsData.Name = "cbConsultItemsData";
             cbConsultItemsData.Size = new Size(159, 28);
             cbConsultItemsData.TabIndex = 1;
@@ -121,33 +125,13 @@
             btnConsult.BackColor = Color.White;
             btnConsult.FlatStyle = FlatStyle.Popup;
             btnConsult.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConsult.Location = new Point(258, 45);
+            btnConsult.Location = new Point(309, 96);
             btnConsult.Name = "btnConsult";
             btnConsult.Size = new Size(112, 28);
             btnConsult.TabIndex = 2;
             btnConsult.Text = "Consultar";
             btnConsult.UseVisualStyleBackColor = false;
             btnConsult.Click += btnConsult_Click;
-            // 
-            // txtConsultByName
-            // 
-            txtConsultByName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtConsultByName.Location = new Point(72, 99);
-            txtConsultByName.Name = "txtConsultByName";
-            txtConsultByName.Size = new Size(204, 29);
-            txtConsultByName.TabIndex = 3;
-            // 
-            // btnConsultByName
-            // 
-            btnConsultByName.BackColor = Color.White;
-            btnConsultByName.FlatStyle = FlatStyle.Popup;
-            btnConsultByName.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            btnConsultByName.Location = new Point(300, 99);
-            btnConsultByName.Name = "btnConsultByName";
-            btnConsultByName.Size = new Size(208, 29);
-            btnConsultByName.TabIndex = 4;
-            btnConsultByName.Text = "Consultar por Nombre";
-            btnConsultByName.UseVisualStyleBackColor = false;
             // 
             // btnConsultInventoryClose
             // 
@@ -172,8 +156,6 @@
             BackColor = Color.White;
             ClientSize = new Size(704, 557);
             Controls.Add(btnConsultInventoryClose);
-            Controls.Add(btnConsultByName);
-            Controls.Add(txtConsultByName);
             Controls.Add(btnConsult);
             Controls.Add(cbConsultItemsData);
             Controls.Add(grdData);
@@ -182,7 +164,6 @@
             Load += frmConsultInventory_Load;
             ((System.ComponentModel.ISupportInitialize)grdData).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -195,8 +176,6 @@
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn Precio;
-        private TextBox txtConsultByName;
-        private Button btnConsultByName;
         private FontAwesome.Sharp.IconButton btnConsultInventoryClose;
     }
 }

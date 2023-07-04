@@ -281,6 +281,7 @@
             grdPreviewBill.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdPreviewBill.Size = new Size(537, 211);
             grdPreviewBill.TabIndex = 86;
+            grdPreviewBill.CellMouseClick += grdPreviewBill_CellMouseClick;
             // 
             // btnPurcharseBack
             // 

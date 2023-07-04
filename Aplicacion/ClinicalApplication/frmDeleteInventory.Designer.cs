@@ -124,6 +124,7 @@
             // 
             // cbCategoryAddInventary
             // 
+            cbCategoryAddInventary.Enabled = false;
             cbCategoryAddInventary.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             cbCategoryAddInventary.FormattingEnabled = true;
             cbCategoryAddInventary.Items.AddRange(new object[] { "Medicamentos", "Medias" });
@@ -138,6 +139,7 @@
             txtbPrice.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtbPrice.Location = new Point(35, 224);
             txtbPrice.Name = "txtbPrice";
+            txtbPrice.ReadOnly = true;
             txtbPrice.Size = new Size(254, 27);
             txtbPrice.TabIndex = 6;
             // 
@@ -147,6 +149,7 @@
             txtbStartingAmount.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtbStartingAmount.Location = new Point(35, 156);
             txtbStartingAmount.Name = "txtbStartingAmount";
+            txtbStartingAmount.ReadOnly = true;
             txtbStartingAmount.Size = new Size(254, 27);
             txtbStartingAmount.TabIndex = 5;
             // 
@@ -156,6 +159,7 @@
             txtbNameObject.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             txtbNameObject.Location = new Point(35, 96);
             txtbNameObject.Name = "txtbNameObject";
+            txtbNameObject.ReadOnly = true;
             txtbNameObject.Size = new Size(254, 27);
             txtbNameObject.TabIndex = 4;
             // 

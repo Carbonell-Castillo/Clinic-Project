@@ -112,7 +112,6 @@ namespace ClinicalApplication
                 DataBase dataBase = new DataBase();
                 string qprocedure;
 
-                string counts = "'" + Convert.ToString(row.Cells[1].Value) + "'";
                 decimal quantity;
 
                 if (row.Cells[2].Value != null && !string.IsNullOrEmpty(row.Cells[2].Value.ToString()))
@@ -120,7 +119,6 @@ namespace ClinicalApplication
                     if (decimal.TryParse(row.Cells[2].Value.ToString(), out quantity))
                     {
                         qprocedure = "updateBalanceSheetActive @rowId=" + rowIdCounterActive;
-                        qprocedure = qprocedure + ",@counts=" + counts;
                         qprocedure = qprocedure + ",@quantity=" + quantity;
 
                         if (dataBase.ExecuteQuery(qprocedure))
@@ -146,7 +144,6 @@ namespace ClinicalApplication
                     if (decimal.TryParse(row.Cells[2].Value.ToString(), out quantity))
                     {
                         qprocedure = "updateBalanceSheetPassiveCapital @rowId=" + rowIdCounterPassiveCapital;
-                        qprocedure = qprocedure + ",@counts=" + counts;
                         qprocedure = qprocedure + ",@quantity=" + quantity;
 
                         if (dataBase.ExecuteQuery(qprocedure))
@@ -298,6 +295,11 @@ namespace ClinicalApplication
 
         private void calculateCellsPassiveCapital()
         {
+            //IVA por Pagar
+            if (grdBalanceSheetPassiveCapital.Rows.Count > 1 && grdBalanceSheetPassiveCapital.Rows[1].Cells[2].Value != null || grdBalanceSheetPassiveCapital.Rows.Count > 1 && grdBalanceSheetPassiveCapital.Rows[2].Cells[2].Value != null)
+            {
+                grdBalanceSheetPassiveCapital.Rows[2].Cells[2].Value = (decimal)(((double)getNetIncome() / 1.12) * 0.12);
+            }
             //Total Pasivo Circulante
             if (grdBalanceSheetPassiveCapital.Rows.Count > 1 && grdBalanceSheetPassiveCapital.Rows[1].Cells[2].Value != null || grdBalanceSheetPassiveCapital.Rows.Count > 1 && grdBalanceSheetPassiveCapital.Rows[2].Cells[2].Value != null)
             {
@@ -359,7 +361,7 @@ namespace ClinicalApplication
             {
                 while (dataBase.table.Read())
                 {
-                    counter += dataBase.table.GetDecimal(6);
+                    counter += dataBase.table.GetInt32(5) * dataBase.table.GetDecimal(6);
                 }
                 return counter;
             }

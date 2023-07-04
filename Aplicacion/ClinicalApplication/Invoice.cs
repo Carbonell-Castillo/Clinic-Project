@@ -67,7 +67,7 @@ namespace ClinicalApplication
                 command.Parameters.AddWithValue("@date", DateTime.Now);
                 command.Parameters.AddWithValue("@nit", nit);
                 command.Parameters.AddWithValue("@name", name);
-                command.Parameters.AddWithValue("@doc", docData);
+                command.Parameters.AddWithValue("@docData", docData);
 
                 command.Connection = dataBase.Connection;
 

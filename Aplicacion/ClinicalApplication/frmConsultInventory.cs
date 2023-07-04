@@ -21,6 +21,10 @@ namespace ClinicalApplication
         private void frmConsultInventory_Load(object sender, EventArgs e)
         {
             loadData("");
+            foreach (DataGridViewColumn column in grdData.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
 
         public void loadData(String category)
@@ -73,6 +77,11 @@ namespace ClinicalApplication
         private void btnConsultInventoryClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnConsultByName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

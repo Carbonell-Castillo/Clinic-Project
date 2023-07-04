@@ -15,7 +15,8 @@ namespace ClinicalApplication
 {
     public partial class frmIncomeStatement : Form
     {
-        decimal impuesto = 0.25M;
+        decimal ISR = 0.25M;
+        decimal RESERVA_LEGAL = 0.05M;
 
         public frmIncomeStatement()
         {
@@ -41,12 +42,13 @@ namespace ClinicalApplication
                 {
                     grdIncomeStatement.Rows.Add("", dataBase.table.GetString(1), dataBase.table.GetDecimal(2));
                 }
-                grdIncomeStatement.Rows[0].Cells[2].ReadOnly = true;
                 grdIncomeStatement.Rows[2].Cells[2].ReadOnly = true;
                 grdIncomeStatement.Rows[5].Cells[2].ReadOnly = true;
                 grdIncomeStatement.Rows[6].Cells[2].ReadOnly = true;
                 grdIncomeStatement.Rows[9].Cells[2].ReadOnly = true;
+                grdIncomeStatement.Rows[10].Cells[2].ReadOnly = true;
                 grdIncomeStatement.Rows[11].Cells[2].ReadOnly = true;
+                grdIncomeStatement.Rows[12].Cells[2].ReadOnly = true;
                 foreach (DataGridViewColumn column in grdIncomeStatement.Columns)
                 {
                     column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -65,35 +67,40 @@ namespace ClinicalApplication
 
         private void calculateCells()
         {
-            //Ganancia Bruta
+            //Margen Bruto
             if (grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[0].Cells[2].Value != null || grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[1].Cells[2].Value != null)
             {
-                grdIncomeStatement.Rows[2].Cells[2].Value = Convert.ToDecimal(grdIncomeStatement.Rows[0].Cells[2].Value) + Convert.ToDecimal(grdIncomeStatement.Rows[1].Cells[2].Value);
+                grdIncomeStatement.Rows[2].Cells[2].Value = Convert.ToDecimal(grdIncomeStatement.Rows[0].Cells[2].Value) - Convert.ToDecimal(grdIncomeStatement.Rows[1].Cells[2].Value);
             }
-            //Gastos Totales de Operación
+            //Gastos de Operación
             if (grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[3].Cells[2].Value != null || grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[4].Cells[2].Value != null)
             {
                 grdIncomeStatement.Rows[5].Cells[2].Value = Convert.ToDecimal(grdIncomeStatement.Rows[3].Cells[2].Value) + Convert.ToDecimal(grdIncomeStatement.Rows[4].Cells[2].Value);
             }
-            //Ingresos de Operación
+            //Ganancia de Operación
             if (grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[2].Cells[2].Value != null || grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[5].Cells[2].Value != null)
             {
                 grdIncomeStatement.Rows[6].Cells[2].Value = Convert.ToDecimal(grdIncomeStatement.Rows[2].Cells[2].Value) - Convert.ToDecimal(grdIncomeStatement.Rows[5].Cells[2].Value);
             }
-            //Ingresos Antes de Impuestos
+            //Ganancia Antes de Impuestos
             if (grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[6].Cells[2].Value != null || grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[7].Cells[2].Value != null || grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[8].Cells[2].Value != null)
             {
                 grdIncomeStatement.Rows[9].Cells[2].Value = (Convert.ToDecimal(grdIncomeStatement.Rows[6].Cells[2].Value) + Convert.ToDecimal(grdIncomeStatement.Rows[8].Cells[2].Value)) - Convert.ToDecimal(grdIncomeStatement.Rows[7].Cells[2].Value);
             }
 
+            //ISR y Reserva Legal
             if (grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[9].Cells[2].Value != null)
             {
-                grdIncomeStatement.Rows[10].Cells[2].Value = Convert.ToDecimal(grdIncomeStatement.Rows[9].Cells[2].Value) * impuesto;
+                decimal calculoISR = Convert.ToDecimal(grdIncomeStatement.Rows[9].Cells[2].Value) * ISR;
+                decimal reservaLegal = (Convert.ToDecimal(grdIncomeStatement.Rows[9].Cells[2].Value) - calculoISR) * RESERVA_LEGAL;
+                
+                grdIncomeStatement.Rows[10].Cells[2].Value = calculoISR;
+                grdIncomeStatement.Rows[11].Cells[2].Value = reservaLegal;            
             }
 
-            if (grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[9].Cells[2].Value != null || grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[10].Cells[2].Value != null)
+            if (grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[9].Cells[2].Value != null || grdIncomeStatement.Rows.Count > 1 && grdIncomeStatement.Rows[10].Cells[2].Value != null && grdIncomeStatement.Rows[11].Cells[2].Value != null)
             {
-                grdIncomeStatement.Rows[11].Cells[2].Value = Convert.ToDecimal(grdIncomeStatement.Rows[9].Cells[2].Value) - Convert.ToDecimal(grdIncomeStatement.Rows[10].Cells[2].Value);
+                grdIncomeStatement.Rows[12].Cells[2].Value = Convert.ToDecimal(grdIncomeStatement.Rows[9].Cells[2].Value) - Convert.ToDecimal(grdIncomeStatement.Rows[10].Cells[2].Value) - Convert.ToDecimal(grdIncomeStatement.Rows[11].Cells[2].Value);
             }
         }
 
@@ -107,11 +114,9 @@ namespace ClinicalApplication
                 DataBase dataBase = new DataBase();
                 string qprocedure;
 
-                string counts = "'" + Convert.ToString(row.Cells[1].Value) + "'";
                 decimal quantity = Convert.ToDecimal(row.Cells[2].Value);
 
                 qprocedure = "UpdateIncomeStatement @rowId=" + rowIdCounter;
-                qprocedure = qprocedure + ",@counts=" + counts;
                 qprocedure = qprocedure + ",@quantity=" + quantity;
 
                 if (dataBase.ExecuteQuery(qprocedure))
@@ -123,7 +128,7 @@ namespace ClinicalApplication
                 rowIdCounter += 1;
             }
 
-            if (counter_register >= 12)
+            if (counter_register >= 13)
             {
                 MessageBox.Show("Los datos de la tabla han sido almacenados");
             }
@@ -137,14 +142,6 @@ namespace ClinicalApplication
 
         private void grdIncomeStatement_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.RowIndex == 0)
-            {
-                DataGridViewCellStyle cellStyle = e.CellStyle;
-                Font boldFont = new Font(cellStyle.Font, FontStyle.Bold);
-                cellStyle.Font = boldFont;
-                e.CellStyle = cellStyle;
-            }
-
             if (e.RowIndex == 2)
             {
                 DataGridViewCellStyle cellStyle = e.CellStyle;
@@ -177,7 +174,7 @@ namespace ClinicalApplication
                 e.CellStyle = cellStyle;
             }
 
-            if (e.RowIndex == 11)
+            if (e.RowIndex == 12)
             {
                 DataGridViewCellStyle cellStyle = e.CellStyle;
                 Font boldFont = new Font(cellStyle.Font, FontStyle.Bold);

@@ -39,7 +39,7 @@ namespace ClinicalApplication
 
         private void cmdDelete_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtCode.Text))
+            if (validateData())
             {
                 Inventory inventory = new Inventory();
                 String code = txtCode.Text;
@@ -48,15 +48,34 @@ namespace ClinicalApplication
                 if (inventory.deleteProduct(code))
                 {
                     MessageBox.Show("Registro eliminado");
-
+                    clear();
                 }
-
+            }
+            else
+            {
+                MessageBox.Show("Los campos estan vacios");
             }
         }
 
         private void btnPurcharseBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public bool validateData()
+        {
+            return !string.IsNullOrEmpty(txtCode.Text) && !string.IsNullOrEmpty(txtbNameObject.Text)
+                && !string.IsNullOrEmpty(txtbStartingAmount.Text) && !string.IsNullOrEmpty(txtbPrice.Text)
+                && cbCategoryAddInventary.SelectedIndex > -1;
+        }
+
+        public void clear()
+        {
+            txtCode.Clear();
+            txtbNameObject.Clear();
+            txtbStartingAmount.Clear();
+            txtbPrice.Clear();
+            cbCategoryAddInventary.SelectedIndex = -1;
         }
     }
 }

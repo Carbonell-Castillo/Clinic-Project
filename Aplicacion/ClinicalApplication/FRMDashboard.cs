@@ -27,6 +27,24 @@ namespace ClinicalApplication
         private void FRMDashboard_Load(object sender, EventArgs e)
         {
             formSize = this.ClientSize;
+            if (SG.user.RoleId == 1)
+            {
+                btnFinance.Enabled = true;
+                btnDDHH.Enabled = true;
+                btnSales.Enabled = true;
+            }
+            else if (SG.user.RoleId == 2)
+            {
+                btnFinance.Enabled = false;
+                btnDDHH.Enabled = false;
+                btnSales.Enabled = true;
+            }
+            else if (SG.user.RoleId == 3)
+            {
+                btnFinance.Enabled = false;
+                btnDDHH.Enabled = false;
+                btnSales.Enabled = false;
+            }
         }
 
         private void customizeDesing()
@@ -373,6 +391,13 @@ namespace ClinicalApplication
             openChildFormInPanel(new frmIncomeStatement());
 
             hideSubMenu();
+        }
+
+        private void btnLogOff_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmSignIn formSignIn = new frmSignIn();
+            formSignIn.Show();
         }
     }
 }

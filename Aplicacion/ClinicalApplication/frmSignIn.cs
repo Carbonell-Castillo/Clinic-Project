@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace ClinicalApplication
 {
     public partial class frmSignIn : Form
@@ -53,6 +55,7 @@ namespace ClinicalApplication
                 lblStatus.ForeColor = Color.Red;
             }
             dataBase.CloseConnection();
+            txtPassword.UseSystemPasswordChar = true;
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -113,6 +116,28 @@ namespace ClinicalApplication
                 MessageBox.Show("Datos Vacios");
             }
 
+        }
+
+        private int clickCount = 0;
+        private bool isPasswordVisible = true;
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            clickCount++;
+
+            // Cambiar la imagen del PictureBox
+            if (clickCount % 2 == 1)
+            {
+                pibSee.Image = Properties.Resources.eye_solid; // Cambia esto por la imagen que desees mostrar
+            }
+            else
+            {
+                pibSee.Image = Properties.Resources.eye_slash_solid; // Cambia esto por la imagen que desees mostrar
+            }
+
+            // Cambiar la propiedad UseSystemPasswordChar del TextBox
+            txtPassword.UseSystemPasswordChar = !isPasswordVisible;
+            isPasswordVisible = !isPasswordVisible;
         }
     }
 }

@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMDashboard));
             panelMenu = new Panel();
+            btnLogOff = new FontAwesome.Sharp.IconButton();
             panelFinanceSubmenu = new Panel();
             btnIncomeStatement = new FontAwesome.Sharp.IconButton();
             btnBalanceSheet = new FontAwesome.Sharp.IconButton();
-            btnAddFinancialAccount = new FontAwesome.Sharp.IconButton();
             btnFinance = new FontAwesome.Sharp.IconButton();
             panelDDHHSubmenu = new Panel();
             btnManageEmployees = new FontAwesome.Sharp.IconButton();
@@ -75,6 +75,7 @@
             // 
             panelMenu.AutoScroll = true;
             panelMenu.BackColor = SystemColors.Highlight;
+            panelMenu.Controls.Add(btnLogOff);
             panelMenu.Controls.Add(panelFinanceSubmenu);
             panelMenu.Controls.Add(btnFinance);
             panelMenu.Controls.Add(panelDDHHSubmenu);
@@ -92,16 +93,37 @@
             panelMenu.Size = new Size(230, 604);
             panelMenu.TabIndex = 0;
             // 
+            // btnLogOff
+            // 
+            btnLogOff.Dock = DockStyle.Bottom;
+            btnLogOff.FlatAppearance.BorderSize = 0;
+            btnLogOff.FlatStyle = FlatStyle.Flat;
+            btnLogOff.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogOff.ForeColor = SystemColors.ControlLightLight;
+            btnLogOff.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            btnLogOff.IconColor = Color.White;
+            btnLogOff.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnLogOff.IconSize = 30;
+            btnLogOff.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogOff.Location = new Point(0, 822);
+            btnLogOff.Name = "btnLogOff";
+            btnLogOff.Padding = new Padding(10, 0, 0, 0);
+            btnLogOff.Size = new Size(213, 44);
+            btnLogOff.TabIndex = 19;
+            btnLogOff.Tag = "Cerrar Sesion";
+            btnLogOff.Text = "   Cerrar Sesion";
+            btnLogOff.UseVisualStyleBackColor = true;
+            btnLogOff.Click += btnLogOff_Click;
+            // 
             // panelFinanceSubmenu
             // 
             panelFinanceSubmenu.BackColor = Color.FromArgb(41, 145, 217);
             panelFinanceSubmenu.Controls.Add(btnIncomeStatement);
             panelFinanceSubmenu.Controls.Add(btnBalanceSheet);
-            panelFinanceSubmenu.Controls.Add(btnAddFinancialAccount);
             panelFinanceSubmenu.Dock = DockStyle.Top;
             panelFinanceSubmenu.Location = new Point(0, 704);
             panelFinanceSubmenu.Name = "panelFinanceSubmenu";
-            panelFinanceSubmenu.Size = new Size(213, 167);
+            panelFinanceSubmenu.Size = new Size(213, 118);
             panelFinanceSubmenu.TabIndex = 13;
             // 
             // btnIncomeStatement
@@ -116,7 +138,7 @@
             btnIncomeStatement.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnIncomeStatement.IconSize = 30;
             btnIncomeStatement.ImageAlign = ContentAlignment.MiddleLeft;
-            btnIncomeStatement.Location = new Point(0, 100);
+            btnIncomeStatement.Location = new Point(0, 50);
             btnIncomeStatement.Name = "btnIncomeStatement";
             btnIncomeStatement.Padding = new Padding(10, 0, 0, 0);
             btnIncomeStatement.Size = new Size(213, 50);
@@ -140,7 +162,7 @@
             btnBalanceSheet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnBalanceSheet.IconSize = 30;
             btnBalanceSheet.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBalanceSheet.Location = new Point(0, 50);
+            btnBalanceSheet.Location = new Point(0, 0);
             btnBalanceSheet.Name = "btnBalanceSheet";
             btnBalanceSheet.Padding = new Padding(10, 0, 0, 0);
             btnBalanceSheet.Size = new Size(213, 50);
@@ -151,29 +173,6 @@
             btnBalanceSheet.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBalanceSheet.UseVisualStyleBackColor = true;
             btnBalanceSheet.Click += btnBalanceSheet_Click;
-            // 
-            // btnAddFinancialAccount
-            // 
-            btnAddFinancialAccount.Dock = DockStyle.Top;
-            btnAddFinancialAccount.FlatAppearance.BorderSize = 0;
-            btnAddFinancialAccount.FlatStyle = FlatStyle.Flat;
-            btnAddFinancialAccount.Font = new Font("Verdana", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddFinancialAccount.ForeColor = SystemColors.ControlLightLight;
-            btnAddFinancialAccount.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            btnAddFinancialAccount.IconColor = Color.White;
-            btnAddFinancialAccount.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnAddFinancialAccount.IconSize = 30;
-            btnAddFinancialAccount.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAddFinancialAccount.Location = new Point(0, 0);
-            btnAddFinancialAccount.Name = "btnAddFinancialAccount";
-            btnAddFinancialAccount.Padding = new Padding(10, 0, 0, 0);
-            btnAddFinancialAccount.Size = new Size(213, 50);
-            btnAddFinancialAccount.TabIndex = 5;
-            btnAddFinancialAccount.Tag = "Consultar";
-            btnAddFinancialAccount.Text = "  Añadir cuentas";
-            btnAddFinancialAccount.TextAlign = ContentAlignment.MiddleLeft;
-            btnAddFinancialAccount.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAddFinancialAccount.UseVisualStyleBackColor = true;
             // 
             // btnFinance
             // 
@@ -273,7 +272,7 @@
             btnDDHH.Padding = new Padding(10, 0, 0, 0);
             btnDDHH.Size = new Size(213, 44);
             btnDDHH.TabIndex = 16;
-            btnDDHH.Tag = "Finanzas";
+            btnDDHH.Tag = "Recursos Humanos";
             btnDDHH.Text = "  Recursos Humanos";
             btnDDHH.TextAlign = ContentAlignment.MiddleLeft;
             btnDDHH.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -656,7 +655,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(203, 159);
+            pictureBox1.Location = new Point(217, 110);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(306, 336);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -723,8 +722,7 @@
         private Panel panelFinanceSubmenu;
         private FontAwesome.Sharp.IconButton btnIncomeStatement;
         private FontAwesome.Sharp.IconButton btnBalanceSheet;
-        private FontAwesome.Sharp.IconButton btn;
+        private FontAwesome.Sharp.IconButton btnLogOff;
         private FontAwesome.Sharp.IconButton btnFinance;
-        private FontAwesome.Sharp.IconButton btnAddFinancialAccount;
     }
 }

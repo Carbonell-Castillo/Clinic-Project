@@ -24,10 +24,10 @@ namespace ClinicalApplication
         private void customButton1_Click(object sender, EventArgs e)
         {
             int invoiceId = int.Parse(txtIdInvoice.Text); // ID del registro de la factura que deseas visualizar
-            string query = "SELECT doc FROM invoice WHERE id = @invoiceId";
+            string query = "SELECT docData FROM invoice WHERE id = @invoiceId";
 
             // Crea y abre una conexión a la base de datos
-            using (SqlConnection connection = new SqlConnection("Server=tcp:clinica-prueba.database.windows.net,1433;Initial Catalog=clinicaDB;Persist Security Info=False;User ID=admin12;Password=admin3212*;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection connection = new SqlConnection("Server=tcp:dbked.database.windows.net,1433;Initial Catalog = dbClinica; Persist Security Info=False;User ID = admin12; Password=admin3212*; MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout = 30;"))
             {
                 connection.Open();
 
@@ -84,7 +84,7 @@ namespace ClinicalApplication
         private void TestOpenPdf_Load(object sender, EventArgs e)
         {
             DataBase dataBase = new DataBase();
-            String qprocedure = "viewinvoice";
+            String qprocedure = "viewInvoiceAll";
 
 
             if (dataBase.ExecuteQuery(qprocedure))

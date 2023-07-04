@@ -70,14 +70,19 @@ namespace ClinicalApplication
 
                 }
             }
+            else
+            {
+                MessageBox.Show("Los campos estan vacios");
+            }
         }
 
         public void clear()
         {
-            txtCode.Text = "";
-            txtbNameObject.Text = "";
-            txtbStartingAmount.Text = "";
-            txtbPrice.Text = "";
+            txtCode.Clear();
+            txtbNameObject.Clear();
+            txtbStartingAmount.Clear();
+            txtbPrice.Clear();
+            cbCategoryAddInventary.SelectedIndex = -1;
         }
 
         public bool validateData()

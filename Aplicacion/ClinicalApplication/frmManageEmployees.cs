@@ -123,54 +123,61 @@ namespace ClinicalApplication
             }
             else
             {
-                DataBase dataBase = new DataBase();
-                string qprocedure;
-
-                string idUser = txtIdUser.Text;
-                int roleId = int.Parse(txtRoleIDUser.Text);
-                string nameUser = txtNameUser.Text;
-                string name = txtName.Text;
-                string password = txtPasswordUser.Text;
-                int monthlySalary = int.Parse(txtMonthlySalary.Text);
-
-                qprocedure = "addUser @userId=" + idUser;
-                qprocedure = qprocedure + ",@clinicId=" + SG.user.ClincId;
-                qprocedure = qprocedure + ",@roleId=" + roleId;
-                qprocedure = qprocedure + ",@username=" + nameUser;
-                qprocedure = qprocedure + ",@name=" + name;
-                qprocedure = qprocedure + ",@password=" + password;
-                qprocedure = qprocedure + ",@monthlySalary=" + monthlySalary;
-
-                if (dataBase.ExecuteQuery(qprocedure))
+                if (validateData()) 
                 {
-                    MessageBox.Show("Registro almacenado exitosamente");
+                    DataBase dataBase = new DataBase();
+                    string qprocedure;
+
+                    string idUser = txtIdUser.Text;
+                    int roleId = int.Parse(txtRoleIDUser.Text);
+                    string nameUser = txtNameUser.Text;
+                    string name = txtName.Text;
+                    string password = txtPasswordUser.Text;
+                    int monthlySalary = int.Parse(txtMonthlySalary.Text);
+
+                    qprocedure = "addUser @userId=" + idUser;
+                    qprocedure = qprocedure + ",@clinicId=" + SG.user.ClincId;
+                    qprocedure = qprocedure + ",@roleId=" + roleId;
+                    qprocedure = qprocedure + ",@username=" + nameUser;
+                    qprocedure = qprocedure + ",@name=" + name;
+                    qprocedure = qprocedure + ",@password=" + password;
+                    qprocedure = qprocedure + ",@monthlySalary=" + monthlySalary;
+
+                    if (dataBase.ExecuteQuery(qprocedure))
+                    {
+                        MessageBox.Show("Registro almacenado exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    dataBase.CloseConnection();
+                    // Guardar los datos ingresados en los TextBox
+
+                    // Aquí puedes realizar la lógica para guardar los datos en la base de datos o hacer cualquier otra acción necesaria
+
+                    // Restablecer los controles al estado inicial
+                    btnFireEmployee.Enabled = true;
+                    btnUpdateEmplyees.Enabled = true;
+
+                    txtIdUser.ReadOnly = true;
+                    txtRoleIDUser.ReadOnly = true;
+                    txtNameUser.ReadOnly = true;
+                    txtName.ReadOnly = true;
+                    txtPasswordUser.ReadOnly = true;
+                    txtMonthlySalary.ReadOnly = true;
+
+                    // Limpiar los TextBox
+                    clearAllTextbox();
+
+                    isAddingEmployee = false; // Cambiar el estado a "no agregando empleado"
+                    btnAddEmployees.Text = "Contratar Empleado";
+                    loadDataEmployees();
                 }
                 else
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("Los campos para realizar la transaccion estan vacios");
                 }
-                dataBase.CloseConnection();
-                // Guardar los datos ingresados en los TextBox
-
-                // Aquí puedes realizar la lógica para guardar los datos en la base de datos o hacer cualquier otra acción necesaria
-
-                // Restablecer los controles al estado inicial
-                btnFireEmployee.Enabled = true;
-                btnUpdateEmplyees.Enabled = true;
-
-                txtIdUser.ReadOnly = true;
-                txtRoleIDUser.ReadOnly = true;
-                txtNameUser.ReadOnly = true;
-                txtName.ReadOnly = true;
-                txtPasswordUser.ReadOnly = true;
-                txtMonthlySalary.ReadOnly = true;
-
-                // Limpiar los TextBox
-                clearAllTextbox();
-
-                isAddingEmployee = false; // Cambiar el estado a "no agregando empleado"
-                btnAddEmployees.Text = "Contratar Empleado";
-                loadDataEmployees();
             }
         }
 
@@ -199,54 +206,61 @@ namespace ClinicalApplication
             }
             else
             {
-                DataBase dataBase = new DataBase();
-                string qprocedure;
-
-                string idUser = "'" + txtIdUser.Text + "'";
-                int roleId = int.Parse(txtRoleIDUser.Text);
-                string nameUser = "'" + txtNameUser.Text + "'";
-                string name = "'" + txtName.Text + "'";
-                string password = "'" + txtPasswordUser.Text + "'";
-                int monthlySalary = int.Parse(txtMonthlySalary.Text);
-
-                qprocedure = "updateUser @userId=" + idUser;
-                qprocedure = qprocedure + ",@clinicId=" + SG.user.ClincId;
-                qprocedure = qprocedure + ",@roleId=" + roleId;
-                qprocedure = qprocedure + ",@username=" + nameUser;
-                qprocedure = qprocedure + ",@name=" + name;
-                qprocedure = qprocedure + ",@password=" + password;
-                qprocedure = qprocedure + ",@monthlySalary=" + monthlySalary;
-
-                if (dataBase.ExecuteQuery(qprocedure))
+                if (validateData()) 
                 {
-                    MessageBox.Show("Actualizacion realizada exitosamente");
+                    DataBase dataBase = new DataBase();
+                    string qprocedure;
+
+                    string idUser = "'" + txtIdUser.Text + "'";
+                    int roleId = int.Parse(txtRoleIDUser.Text);
+                    string nameUser = "'" + txtNameUser.Text + "'";
+                    string name = "'" + txtName.Text + "'";
+                    string password = "'" + txtPasswordUser.Text + "'";
+                    int monthlySalary = int.Parse(txtMonthlySalary.Text);
+
+                    qprocedure = "updateUser @userId=" + idUser;
+                    qprocedure = qprocedure + ",@clinicId=" + SG.user.ClincId;
+                    qprocedure = qprocedure + ",@roleId=" + roleId;
+                    qprocedure = qprocedure + ",@username=" + nameUser;
+                    qprocedure = qprocedure + ",@name=" + name;
+                    qprocedure = qprocedure + ",@password=" + password;
+                    qprocedure = qprocedure + ",@monthlySalary=" + monthlySalary;
+
+                    if (dataBase.ExecuteQuery(qprocedure))
+                    {
+                        MessageBox.Show("Actualizacion realizada exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
+                    dataBase.CloseConnection();
+                    // Guardar los datos ingresados en los TextBox
+
+                    // Aquí puedes realizar la lógica para guardar los datos en la base de datos o hacer cualquier otra acción necesaria
+
+                    // Restablecer los controles al estado inicial
+                    btnFireEmployee.Enabled = true;
+                    btnAddEmployees.Enabled = true;
+
+                    txtIdUser.ReadOnly = true;
+                    txtRoleIDUser.ReadOnly = true;
+                    txtNameUser.ReadOnly = true;
+                    txtName.ReadOnly = true;
+                    txtPasswordUser.ReadOnly = true;
+                    txtMonthlySalary.ReadOnly = true;
+
+                    // Limpiar los TextBox
+                    clearAllTextbox();
+
+                    isUpdatingEmployee = false; // Cambiar el estado a "no agregando empleado"
+                    btnUpdateEmplyees.Text = "Actualizar Datos";
+                    loadDataEmployees();
                 }
                 else
                 {
-                    MessageBox.Show("Error");
+                    MessageBox.Show("Los campos para realizar la transaccion estan vacios");
                 }
-                dataBase.CloseConnection();
-                // Guardar los datos ingresados en los TextBox
-
-                // Aquí puedes realizar la lógica para guardar los datos en la base de datos o hacer cualquier otra acción necesaria
-
-                // Restablecer los controles al estado inicial
-                btnFireEmployee.Enabled = true;
-                btnAddEmployees.Enabled = true;
-
-                txtIdUser.ReadOnly = true;
-                txtRoleIDUser.ReadOnly = true;
-                txtNameUser.ReadOnly = true;
-                txtName.ReadOnly = true;
-                txtPasswordUser.ReadOnly = true;
-                txtMonthlySalary.ReadOnly = true;
-
-                // Limpiar los TextBox
-                clearAllTextbox();
-
-                isUpdatingEmployee = false; // Cambiar el estado a "no agregando empleado"
-                btnUpdateEmplyees.Text = "Actualizar Datos";
-                loadDataEmployees();
             }
         }
 
@@ -258,6 +272,13 @@ namespace ClinicalApplication
             txtName.Clear();
             txtPasswordUser.Clear();
             txtMonthlySalary.Clear();
+        }
+
+        private bool validateData()
+        {
+            return !string.IsNullOrEmpty(txtIdUser.Text) && !string.IsNullOrEmpty(txtRoleIDUser.Text)
+                    && !string.IsNullOrEmpty(txtNameUser.Text) && !string.IsNullOrEmpty(txtName.Text)
+                    && !string.IsNullOrEmpty(txtPasswordUser.Text) && !string.IsNullOrEmpty(txtMonthlySalary.Text);
         }
     }
 }

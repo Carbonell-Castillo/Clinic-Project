@@ -71,9 +71,10 @@ namespace ClinicalApplication
             DataBase dataBase = new DataBase();
             string qprocedure;
             id = "'" + id + "'";
+            MessageBox.Show("Id" + id + "Cantidad" + Convert.ToString(quantity));
 
-            qprocedure = "updateInventoryById @id=" + id;
-            qprocedure = qprocedure + ",@newQuantity=" + quantity;
+            qprocedure = "updateQuantityInventory @id=" + id;
+            qprocedure = qprocedure + ",@quantity=" + quantity;
 
             if (dataBase.ExecuteQuery(qprocedure))
             {
@@ -124,7 +125,7 @@ namespace ClinicalApplication
             categoryId = "'" + categoryId + "'";
             name = "'" + name + "'";
 
-            qprocedure = "updateInventoryByIdAll @id=" + id;
+            qprocedure = "updateInventoryId @id=" + id;
             qprocedure = qprocedure + ",@clinicId=" + clinicId;
             qprocedure = qprocedure + ",@categoryId=" + categoryId;
             qprocedure = qprocedure + ",@name=" + name;
